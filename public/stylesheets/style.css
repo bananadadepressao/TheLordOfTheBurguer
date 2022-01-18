@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@400;700&display=swap');
+
+body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Login Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+.bodyLogin{
+    background-position: bottom top;
+    background-image: url(/images/backgroundlogin.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.boxLogin{
+    width: 360px;
+    height: 500px;
+    position: absolute;
+    top: 80px;
+    left: 240px;
+    background-color: white;
+    box-shadow: 8px 8px rgba(0, 0, 0, 0.25);
+}
+.forgotPassword{
+    margin-right: 10%;
+    margin-left: auto;
+    color: rgb(204, 204, 204);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
+}
+.forgotPassword:hover{
+    color: #D68910;
+    text-decoration-line: underline;
+}
+.formLogin{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.inputBtn{
+    margin-top: 48px;
+    padding: 12px;
+    width: 80%;
+    height: 48px;
+    background: #D68910;
+    border: 1px solid #D68910;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+}
+.inputBtn:hover{
+    cursor: pointer;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.25);
+}
+.inputLogin{
+    margin-bottom: 36px;
+    padding: 12px;
+    width: 80%;
+    height: 36px;
+    background: rgba(204, 204, 204, 0.4);
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(204, 204, 204, 0.4);
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #D68910;
+}
+.inputLogin:hover{
+    border: 2px solid #d68a106b;
+}
+.inputLogin:focus{
+    background: white;
+    outline-color:  #D68910;
+}
+.lensLogin{
+    width: 100%;
+    height: 720px;
+    background: black;
+    opacity: 0.4;
+}
+.titleLogin{
+    font-family: 'Roboto';
+    padding-left: 24px;
+    margin-bottom: 64px;
+    font-size: 56px;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END Login Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Supplies Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+.addSupplies{
+    width: 80px;
+    height: 80px;
+    background: #D68910;
+    color: white;
+    border-radius: 50%;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1;
+    font-size: 48px;
+    border: none;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+}
+.addSupplies:hover{
+    cursor: pointer;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.25);
+}
+.contentTable{
+    position: absolute;
+    border-collapse: collapse;
+    margin: 25px 0px;
+    font-size: 16px;
+    min-width: 50%;
+    max-width: 70%;
+    top: 220px;
+    overflow: hidden;
+}
+.contentTable thead tr{
+    background: #D68910;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+.contentTable th{
+    padding: 12px 15px;
+    border-top-right-radius: 20px
+}
+.contentTable td{
+    padding: 12px 15px;
+}
+.contentTable tbody tr{
+    border-bottom: 1px solid #ddd;
+}
+.contentTable tbody tr:hover{
+    color: #D68910;
+}
+.contentTable tbody tr:nth-of-type(even){
+    background: #f3f3f3;
+}
+.contentTable tbody tr:last-of-type{
+    border-bottom: 2px solid #D68910;
+}
+.nav{
+    position: fixed;
+    height: 100%;
+    width: 50px;
+    top: 0%;
+    left: 0%;
+    background: #D68910;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+}
+.pageSelection{
+    padding-left: 10px;
+    padding-top: 5px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    background: #D68910;
+}
+.pageSelection:hover{
+    width: 200px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.pageSelection i, .pageSelection a{
+    color: white;
+    text-decoration-line: none;
+}
+.pageSelection span{
+    margin-left: 16px;
+}
+.searchBox{
+    width: 40%;
+    height: 36px;
+    padding: 12px;
+    top: 56px;
+    left: 30%;
+    right: 30%;
+    position: absolute;
+    color: white;
+    background: #D68910;
+    border: 1px solid #D68910;
+    border-radius: 8px;
+    font-size: 18px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+}
+.searchBox:focus{
+    outline-color:  whitesmoke;
+}
+.searchBox::placeholder {
+    color: white;
+    opacity: 1;
+}
+.subtitle{
+    position: absolute;
+    color: #D68910;
+    top: 116px;
+    left: 20%;
+}
+.subsubtitle{
+    position: absolute;
+    color: #D68910;
+    top: 160px;
+    left: 20%;
+    font-size: 16px;
+}
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END Supplies Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
