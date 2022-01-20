@@ -18,7 +18,7 @@ const UsuariosController = {
 
         await db.Usuario.create(usuarios);
 
-        res.render("login/cadastro");
+        res.render("cadastrar");
 
     },
     editar: (req, res) => {
