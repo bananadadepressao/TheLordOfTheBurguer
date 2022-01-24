@@ -3,12 +3,12 @@ const bcrypt = require("bcrypt");
 
 const LoginController = {
     login: (req, res) => {
-        res.render("admin/login");
+        res.render("admin/login",{ login:"cadastro"});
     },
     loginAcao: async (req, res) => {
         const { email, senha } = req.body;
 
-        const  acessoLivreDS = await db.Usuario.findAll({ where: { email: email} });
+        const  acessoLivreDS = await db.Usuario.findOne({ where: { email: email} });
         if(acessoLivreDS == null){
             res.redirect("/admin/login")
         }
@@ -23,7 +23,7 @@ const LoginController = {
     },
     logout: (req, res) => {
         req.session.destroy();
-        res.redirect("/admin/login");
+        res.redirect("/login");
     },
 };
 

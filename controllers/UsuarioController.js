@@ -16,8 +16,8 @@ cadastrar: (req,res) => {
     });
 },
 acaoCadastrar: async (req, res) => {
-    const salt = bcrypt.genSaltSync(10);
-    const senhaCriptografada = bcrypt.hashSync(req.body.senha, salt);
+    console.log(req.body)
+    const senhaCriptografada = bcrypt.hashSync(req.body.senha, 12);
 
     const usuario = {
         nome: req.body.nome,
@@ -30,7 +30,7 @@ acaoCadastrar: async (req, res) => {
     res.redirect("/admin/usuarios");
 },
 editar: async (req, res) => {
-    const usuario = await db.Usuarios.findByPk(req.params.id)
+    const usuario = await db.Usuario.findByPk(req.params.id)
     res.render("admin/usuarios/form", {
         formAction: `/admin/usuarios/editar/${req.params.id}`, //template string
         buttonMessage: "Atualizar",

@@ -1,7 +1,7 @@
 const autenticacaoMiddleware = function (req, res, next)  {
   
   if(typeof req.session.TheLordOfTheBurguerAdminUser == "undefined"){
-    res.redirect("/admin/login");
+    res.redirect("/login");
     return;
 
   }
