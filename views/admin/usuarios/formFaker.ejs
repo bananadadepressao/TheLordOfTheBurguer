@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Login</title>
+</head>
+<body class="bodyLogin">
+    <div class="lensLogin"></div>
+
+    <div class="boxLogin">
+        <h1 class="titleLogin">Usuarios</h1>
+        <div>
+            <form action="<%= formAction %>" method="POST" class="formLogin"> 
+                <label class="form-label"></label>
+                <input type="text" class="inputLogin" placeholder="Nome" value="<%= usuario.nome %>" name="nome" >
+                
+                <label class="form-label"></label>
+                <input type="text" class="inputLogin" placeholder="E-mail" value="<%= usuario.email %>" name="nome" >
+
+                <label class="form-label"></label>
+                <input type="password" class="inputLogin" placeholder="Senha" style="margin-bottom: 0px;"  value="<%= usuario.senha %>" name="nome" >
+                
+                <input type="submit" value="<%= buttonMessage %>" class="inputBtn">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+

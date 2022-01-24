@@ -3,11 +3,16 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var autenticacaoMiddleware = require("./middlewares/autenticacaoMiddleware");
+var session = require("express-session");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var adminRouter = require('./routes/admin/index');
+var loginRouter = require('./routes/admin/LoginRouter');
 
 var app = express();
+app.use(session ( { secret: "TheLordOfTheBurguer" } )); //como criar um arquivo de ambiente no qual devo colocar esta session?
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -20,6 +25,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/admin', loginRouter);
+app.use('/admin',autenticacaoMiddleware ,adminRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
