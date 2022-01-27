@@ -15,7 +15,7 @@ body{
 
 .bodyLogin{
     background-position: bottom top;
-    background-image: url(/images/backgroundlogin.jpg);
+    background-image: url(../img/backgroundlogin.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -96,24 +96,6 @@ body{
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END Login Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Supplies Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
-.addSupplies{
-    width: 80px;
-    height: 80px;
-    background: #D68910;
-    color: white;
-    border-radius: 50%;
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 1;
-    font-size: 48px;
-    border: none;
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
-}
-.addSupplies:hover{
-    cursor: pointer;
-    box-shadow: 3px 3px rgba(0, 0, 0, 0.25);
-}
 .contentTable{
     position: absolute;
     border-collapse: collapse;
@@ -149,36 +131,54 @@ body{
 .contentTable tbody tr:last-of-type{
     border-bottom: 2px solid #D68910;
 }
-.nav{
-    position: fixed;
-    height: 100%;
-    width: 50px;
-    top: 0%;
-    left: 0%;
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END Supplies Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Food Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+.foodContent{
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 60%;
+    top: 220px;
+}
+.snackCard{
+    width: 240px;
+    height: 240px;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.25);
+    background: rgba(196, 196, 196, 0.01);
+    margin: 24px auto;
+}
+.coverCard{
+    width: 240px;
+    height: 150px;
+}
+.snackTitle{
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END Food Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Shared Between Suplies and Food Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+.addSupplies{
+    width: 80px;
+    height: 80px;
     background: #D68910;
+    color: white;
+    border-radius: 50%;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1;
+    font-size: 48px;
+    border: none;
     box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
 }
-.pageSelection{
-    padding-left: 10px;
-    padding-top: 5px;
-    margin-bottom: 24px;
-    overflow: hidden;
-    width: 40px;
-    height: 40px;
-    font-size: 30px;
-    background: #D68910;
-}
-.pageSelection:hover{
-    width: 200px;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-}
-.pageSelection i, .pageSelection a{
-    color: white;
-    text-decoration-line: none;
-}
-.pageSelection span{
-    margin-left: 16px;
+.addSupplies:hover{
+    cursor: pointer;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.25);
 }
 .searchBox{
     width: 40%;
@@ -216,4 +216,246 @@ body{
     left: 20%;
     font-size: 16px;
 }
-/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END Supplies Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> End Shared Between Suplies and Food Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Shared Between Suplies and Food and register#general#Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+.nav{
+    position: fixed;
+    height: 100%;
+    width: 50px;
+    top: 0%;
+    left: 0%;
+    background: #D68910;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+}
+.pageSelection{
+    padding-left: 10px;
+    padding-top: 5px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    background: #D68910;
+}
+.pageSelection:hover{
+    width: 200px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.pageSelection i, .pageSelection a{
+    color: white;
+    text-decoration-line: none;
+}
+.pageSelection span{
+    margin-left: 16px;
+}
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> End Shared Between Suplies and Food and register#general#Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Shared Between register#general#Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+.formContent{
+    position: absolute;
+    width: 60%;
+    top: 180px;
+}
+.standartLabel{
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+.standartInput{
+    width: 50%;
+    height: 36px;
+    padding: 12px;
+    font-size: 18px;
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: 24px;
+    color: #D68910;
+}
+.standartInput:hover{
+    border: 2px solid #d68a106b;
+}
+.standartInput:focus{
+    outline-color:  #D68910;
+}
+.tinyInputsContent{
+    display: flex;
+    flex-wrap: wrap;
+    width: 55%;
+}
+.tinyInput{
+    position: relative;
+    width: 85%;
+    height: 36px;
+    padding: 12px;
+    font-size: 18px;
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: 24px;
+    color: #D68910;
+}
+.tinyInput:hover{
+    border: 2px solid #d68a106b;
+}
+.tinyInput:focus{
+    outline-color:  #D68910;
+}
+.standartSelect{
+    width: 50%;
+    height: 36px;
+    font-size: 18px;
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: 24px;
+    padding-left: 12px;
+    color: #D68910;
+}
+.standartSelect:hover{
+    border: 2px solid #d68a106b;
+}
+.standartSelect:focus{
+    outline-color:  #D68910;
+}
+.submitBtn{
+    position: relative;
+    width: 100px;
+    height: 36px;
+    font-size: 18px;
+    background: #D68910;
+    color: white;
+    right: -40%;
+}
+.submitBtn:hover{
+    cursor: pointer;
+}
+.titleRegister{
+    position: absolute;
+    color: #D68910;
+    font-size: 46px;
+    top: 46px;
+    left: 20%;
+}
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> End Shared Between register#general#Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Order Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+.addLanch{
+    display: flex;
+    height: 80px;
+    width: 60px;
+    background: #45B050;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 20px;
+}
+.removeLanch{
+    display: flex;
+    height: 80px;
+    width: 60px;
+    background: #D71E29;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    border-bottom-right-radius: 20px;
+}
+.addLanch:hover, .removeLanch:hover{
+    color: #D68910;
+}
+.contentFilter{
+    width: 80%;
+    position: absolute;
+    display: block;
+    top: 124px;
+}
+.contentMenu{
+    width: 60%;
+    position: absolute;
+    top: 280px;
+    left: 10%;
+}
+.contentImgLanch{
+    width: 160px;
+    height: 160px;
+    display: inline;
+}
+.contentImgLanch img{
+    object-fit: cover;
+    overflow: hidden;
+    max-width: 160px;
+    height: 160px;
+}
+.feedBackOrder{
+    position: absolute;
+    right: 0px;
+    top: 120px;
+    width: 20%;
+    height: 100px;
+    background: #D68910;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+}
+.filterBtn{
+    background: white;
+    color: #D68910;
+    border: 2px solid #D68910;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 8px;
+    margin-bottom: 16px;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+}
+.filterBtn:hover{
+    cursor: pointer;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.25);
+}
+.filterByText{
+    width: 40%;
+    height: 36px;
+    padding: 12px;
+    top: 56px;
+    left: 30%;
+    right: 30%;
+    position: absolute;
+    background: white;
+    border: 2px solid #D68910;
+    border-radius: 10px;
+    font-size: 18px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+    left: 0;
+}
+.menuItem{
+    display: inline-flex;
+    background: rgba(196, 196, 196, 0.1);
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    max-height: 160px;
+    overflow: hidden;
+}
+.nameAndDescription{
+    display: block;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-bottom: 8px;
+}
+.nameAndDescription div{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.titleCashier{
+    position: absolute;
+    color: #D68910;
+    font-size: 46px;
+    left: 10%;
+}
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> End Order Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
