@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) =>
     });
 
     Lanches.associate = (models) => {
-        Lanches.hasMany(models.Itens, { as: "itens", foreignKey: "id_itens" });
+        Lanches.hasMany(models.Estoque, { as: "estoque", foreignKey: "id_estoque" });
     }  
 
     return Lanches;

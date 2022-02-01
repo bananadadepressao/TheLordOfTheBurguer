@@ -1,6 +1,7 @@
 module.exports = {
     up: async (queryInterface, Sequelize) => {
-      return queryInterface.createTable('itens', {
+      return queryInterface.createTable('estoques', 
+      {
         id: { 
             type: Sequelize.DataTypes.INTEGER.UNSIGNED,
             primaryKey: true, 
@@ -28,21 +29,13 @@ module.exports = {
             type: Sequelize.DataTypes.STRING(45), 
             allowNull: false 
         },
-        id_lanches: { 
-            type: Sequelize.DataTypes.INTEGER.UNSIGNED, 
-            references: { model: 'lanches', key: 'id_lanches' } 
-        },
-        id_hamburgueria: { 
-            type: Sequelize.DataTypes.INTEGER.UNSIGNED, 
-            references: { model: 'hamburgueria', key: 'id_hamburgueria' 
-        },
-    },
+      
         createdAt: Sequelize.DataTypes.DATE,
         updatedAt: Sequelize.DataTypes.DATE,
         deletedAt: Sequelize.DataTypes.DATE
       });
     },
     down: async (queryInterface, Sequelize) => {
-      return queryInterface.dropTable('itens');
+      return queryInterface.dropTable('estoques');
     }
 };

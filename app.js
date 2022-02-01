@@ -10,6 +10,7 @@ var usersRouter = require('./routes/users');
 var adminRouter = require('./routes/admin/index');
 var loginRouter = require('./routes/admin/LoginRouter');
 
+
 var app = express();
 app.use(session ( { secret: "TheLordOfTheBurguer" } )); //como criar um arquivo de ambiente no qual devo colocar esta session?
 
