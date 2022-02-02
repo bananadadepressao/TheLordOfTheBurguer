@@ -28,6 +28,7 @@ const EstoqueController = {
     excluir: async (req, res) => {
         await db.Estoque.destroy({ where: { id: req.params.id } });
         res.redirect("/admin/estoque");
+        
     },
 }
 
