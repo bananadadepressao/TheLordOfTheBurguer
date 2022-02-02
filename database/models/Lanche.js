@@ -11,9 +11,7 @@ module.exports = (sequelize, DataTypes) =>
         timestamps: true
     });
 
-    Lanches.associate = (models) => {
-        Lanches.hasMany(models.Estoque, { as: "estoque", foreignKey: "id_estoque" });
-    }  
+ 
 
     return Lanches;
 }

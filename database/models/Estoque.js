@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
         categoria: DataTypes.STRING(45),
 
     }, {
-        tableName: 'estoque',
+        tableName: 'estoques',
         timestamps: true,
     });
 
