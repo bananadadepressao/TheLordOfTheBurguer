@@ -29,6 +29,7 @@ module.exports = {
             type: Sequelize.DataTypes.STRING(45), 
             allowNull: false 
         },
+        
       
         createdAt: Sequelize.DataTypes.DATE,
         updatedAt: Sequelize.DataTypes.DATE,

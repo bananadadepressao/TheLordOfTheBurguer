@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/estoque',EstoqueRouter);
-router.use('/estoque/cadastrar',CadastrarEstoqueRouter);
+router.use('/estoque/form',CadastrarEstoqueRouter);
 
 
 router.use("/usuarios",UsuariosRouter);

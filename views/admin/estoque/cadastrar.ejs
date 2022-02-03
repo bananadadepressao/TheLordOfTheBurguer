@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
     <title>Cadastro de Estoque</title>
 </head>
-<body>
+<body>    
     <div class="nav">
         <div class="pageSelection">
-            <a href="#">
+            <a href="/admin/estoque">
                 <i class="fas fa-bacon"></i>
                 <span>Estoque</span>
             </a>
@@ -27,40 +27,46 @@
 
     <h1 class="titleRegister">Cadastro de Item</h1>
 
-    <form action="" class="formContent">
+    <form action="/admin/estoque/form/cadastrar" method="POST" class="formContent">
         <label for="item" class="standartLabel">Nome do Item</label>
-        <input type="text" name="item" placeholder="Item" class="standartInput">
+        <input type="text" name="item" placeholder="item" class="standartInput"value="<%= estoque.item %>">
 
-        <label for="Caregoria" class="standartLabel">Categoria</label>
-        <select name="Categoria" id="Categoria" class="standartSelect">
+
+        <label for="caregoria" class="standartLabel">Categoria</label>
+        <select name="categoria" id="Categoria" class="standartSelect">
             <option value="" selected disabled hidden style="color: #c4c4c4;">Categoria</option>
-            <option value="alimento">Alimento</option>
-            <option value="bebida">Bebida</option>
+            <option value="">Alimento</option>
+            <option value="">Bebida</option>
         </select>
 
-        <label for="Tipo" class="standartLabel">Tipo</label>
-        <select name="Tipo" id="Tipo" class="standartSelect">
+        <label for="tipo" class="standartLabel">Tipo</label>
+        <select name="tipo" id="tipo" class="standartSelect">
             <option value="" selected disabled hidden style="color: #c4c4c4;">Tipo</option>
-            <option value="garrafa">Garrafa</option>
-            <option value="lata">Lata</option>
+            <option value="">Garrafa</option>
+            <option value="">Lata</option>
         </select>
-
         <div class="tinyInputsContent">
+        
             <div>
-                <label for="qtd" class="standartLabel">Qtd.</label>
-                <input type="number" name="qtd" placeholder="Qtd." class="tinyInput">
+                <label for="quantidade" class="standartLabel">Qtd.</label>
+                <input type="number" name="quantidade" placeholder="quantidade" class="tinyInput" value="<%= estoque.quantidade %>" >
             </div>
 
             <div>
-                <label for="qtdmin" class="standartLabel">Qtd. Min.</label>
-                <input type="number" name="qtdmin" placeholder="Qtd. Min" class="tinyInput">
+                <label for="quantidade_minima" class="standartLabel">quantidade_minima</label>
+                <input type="number" name="quantidade_minima" placeholder="quantidade_minima" class="tinyInput" value="<%= estoque.quantidade_minima %>" >
             </div>
         </div>
 
-        <label for="dateshop" class="standartLabel">Última Compra</label>
-        <input type="date" name="dateshop" placeholder="Data da Última Compra" class="standartInput">
+        <label for="ultima_compra" class="standartLabel">Última Compra</label>
+        <input type="date" name="ultima_compra" placeholder="Data da Última Compra" class="standartInput" value="<%= estoque.ultima_compra %>" >
 
-        <input type="submit" value="Cadastrar" class="submitBtn">
+
+        <input type="submit" value="Cadastrar" name="">
+
+
+        <a type="submit" value="Cadastrar"class="btn btn-outline" href="/admin/estoque">cadastrar</a>
+
     </form>
 </body>
 </html>

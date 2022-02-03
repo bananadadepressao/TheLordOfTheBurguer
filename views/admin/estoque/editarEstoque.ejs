@@ -34,12 +34,12 @@
     <table class="contentTable">
         <thead>
             <tr>
-                <th>Item</th>
-                <th>Qtd.</th>
-                <th>Qtd. Min.</th>
-                <th>Última Compra</th>
-                <th>Categoria</th>
-                <th>Tipo</th>
+                <th scope="col">Item</th>
+                <th scope="col">Qtd.</th>
+                <th scope="col">Qtd. Min.</th>
+                <th scope="col">Última Compra</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Tipo</th>
             </tr>
         </thead>
         <tbody>
@@ -67,9 +67,34 @@
                 <td>Comida</td>
                 <td>Latícinio</td>
             </tr>
+
+            <% for(let i = 0; i < estoques.length; i++){ %>
+                <% console.log(estoques[i].id) %>
+                <tr>                
+                    <td><%= estoques[i].nome %></td>
+                    <td><%= estoques[i].quantidade %></td>
+                    <td><%= estoques[i].quantidade_minima  %></td>
+                    <td><%= estoques[i].categoria %></td>
+                    <td><%= estoques[i].tipo %></td>
+                    <td><%= estoques[i].ultima_compra %></td>
+                    <td>
+                        <!-- <a class="btn btn-outline" href="/admin/estoque/editar/<%= estoques[i].id %>" >Editar</a> -->
+                        <a class="btn btn-outline" href="/admin/estoque/excluir/<%= estoques[i].id %>">Excluir</a>
+
+                        <form action="/admin/estoque/editar/<%= estoques[i].id %>" method="GET" >
+                            <input type="submit" value="editar" name="">
+                         </form>
+
+                    </td>
+                </tr>
+            <% } %>
+
         </tbody>
     </table>
-
-    <a href="/admin/estoque/Cadastrar" class="addSupplies" > + </a>
+   <form action="/admin/estoque/form/cadastrar" method="GET" >
+       <input type="submit" value="redirecionar" name="">
+    </form>
+    <a href="/admin/estoque/cadastrar" class="addSupplies" > + </a>
 </body>
 </html>
+
