@@ -25,6 +25,8 @@ const LoginController = {
         res.redirect("/admin/");
     },
     logout: (req, res) => {
+         console.log("cheguei no destroy");
+
         req.session.destroy();
         res.redirect("/login");
     },

@@ -16,7 +16,6 @@ cadastrar: (req,res) => {
     });
 },
 acaoCadastrar: async (req, res) => {
-    console.log(req.body)
     const senhaCriptografada = bcrypt.hashSync(req.body.senha, 12);
 
     const usuario = {

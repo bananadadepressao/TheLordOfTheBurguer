@@ -15,7 +15,7 @@ const EstoqueController = {
 
         res.render("admin/estoque/cadastrar", {
             formAction: `/admin/estoque/editar/${req.params.id}`,//template string
-            buttonMessage: "Atualizar",
+            buttonMessage: "Editar",
             estoque: estoque
         });
     },
@@ -39,6 +39,7 @@ const EstoqueController = {
         res.redirect("/admin/estoque");
         
     },
+    
 }
 
 module.exports = EstoqueController;

@@ -3,14 +3,12 @@ const db = require("../database/models");
 
 const CadastrarEstoqueController = {
  listar: async (req, res) => {
- const estoques = await db.Estoque.findAll();
-   res.render("admin/estoque/cadastrar",{ estoques: estoques });
+   res.render("admin/estoque/cadastrar");
  },
  cadastrar: (req,res) => {
      console.log("cheguei no cadastrar");
     res.render("admin/estoque/cadastrar",{
-        formAction: "/admin/estoque/cadastrar",
-        buttonMessage: "Cadastrar",
+        
         estoque: {}
     
     });
