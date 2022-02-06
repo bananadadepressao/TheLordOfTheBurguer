@@ -7,22 +7,23 @@ const LoginController = {
     },
     loginAcao: async (req, res) => {
         const { email, senha } = req.body;
-        console.log(email)
 
         const  acessoLivreDS = await db.Usuario.findOne({ where: { email: email} });
-        console.log(acessoLivreDS )
 
+        console.log('USUÁRIO <<<<<<<<<<<<<<<<<<<<<,');
+        console.log(acessoLivreDS.dataValues);
 
         if(acessoLivreDS == null){
             res.redirect("/admin/login")
         }     
+
         const acessoLivre = acessoLivreDS.dataValues;
         if(!bcrypt.compareSync(senha, acessoLivre.senha)){
             res.redirect("/admin/login")
-
         }
+
         req.session.TheLordOfTheBurguerAdminUser = acessoLivre;
-        res.redirect("/admin/");
+        res.redirect("/admin/estoque");
     },
     logout: (req, res) => {
          console.log("cheguei no destroy");

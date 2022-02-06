@@ -8,7 +8,6 @@ module.exports = {
             autoIncrement: true, 
             allowNull: false 
         },
-
         nome: { 
             type: Sequelize.DataTypes.STRING(45), 
             allowNull: false 

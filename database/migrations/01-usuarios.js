@@ -20,7 +20,10 @@ module.exports = {
           senha: { 
             type: Sequelize.DataTypes.STRING, allowNull: false
           },
-          
+          id_hamburgueria: {
+            type: Sequelize.DataTypes.INTEGER.UNSIGNED,
+            allowNull: false
+          },
           createdAt: Sequelize.DataTypes.DATE,
           updatedAt: Sequelize.DataTypes.DATE,
           deletedAt: Sequelize.DataTypes.DATE

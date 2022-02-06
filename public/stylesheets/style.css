@@ -97,9 +97,9 @@ body{
 
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Supplies Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 .addSupplies{
-    width: 80px;
-    height: 80px;
-    background: #D68910;
+    width: 70px;
+    height: 70px;
+    background: #d68910;
     color: white;
     border-radius: 50%;
     position: fixed;
@@ -109,6 +109,8 @@ body{
     font-size: 48px;
     border: none;
     box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    text-justify: center;
 }
 .addSupplies:hover{
     cursor: pointer;

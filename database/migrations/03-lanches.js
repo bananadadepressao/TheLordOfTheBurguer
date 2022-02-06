@@ -3,24 +3,23 @@ module.exports = {
       return queryInterface.createTable(
         'lanches',
        {
-        id: 
-        {
+        id: {
           type: Sequelize.DataTypes.INTEGER.UNSIGNED, 
           primaryKey: true, 
           autoIncrement: true, 
           allowNull: false 
         },
-        nome: 
-        { 
-          type: 
-          Sequelize.DataTypes.STRING(75), 
+        nome: { 
+          type: Sequelize.DataTypes.STRING(75), 
           allowNull: false 
         },
-        descricao: 
-        { 
-          type: 
-          Sequelize.DataTypes.TEXT, 
+        descricao: {
+          type: Sequelize.DataTypes.TEXT, 
           allowNull: false 
+        },
+        id_hamburgueria: {
+          type: Sequelize.DataTypes.INTEGER.UNSIGNED,
+          allowNull: false
         },
         createdAt: Sequelize.DataTypes.DATE,
         updatedAt: Sequelize.DataTypes.DATE,
