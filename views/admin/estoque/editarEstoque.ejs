@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/730d5389e8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <title>Estoque</title>
+</head>
+
+<body>
+    <input type="text" class="searchBox" placeholder="Pesquisar">
+
+    <div class="nav">
+        <div class="pageSelection">
+            <a href="#">
+                <i class="fas fa-bacon"></i>
+                <span>Estoque</span>
+            </a>
+        </div>
+
+        <div class="pageSelection">
+            <a href="#">
+                <i class="fas fa-hamburger"></i>
+                <span>Lanches</span>
+            </a>
+        </div>
+    </div>
+
+    <% if(estoques.length == 0) {%>
+        <img src="../../../public/images/nothingFound.png" alt="Nenhum item cadastrado no estoque">
+    <%} else{%>
+        <h2 class="subtitle">Todo o Estoque</h2>
+        <p class="subsubtitle">3 itens</p>
+
+        <table class="contentTable">
+            <thead>
+                <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">Qtd.</th>
+                    <th scope="col">Qtd. Min.</th>
+                    <th scope="col">Última Compra</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Tipo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i = 0; i < estoques.length; i++){ %>
+                    <% console.log(estoques[i].id) %>
+                    <tr>                
+                        <td><%= estoques[i].nome %></td>
+                        <td><%= estoques[i].quantidade %></td>
+                        <td><%= estoques[i].quantidade_minima  %></td>
+                        <td><%= estoques[i].categoria %></td>
+                        <td><%= estoques[i].tipo %></td>
+                        <td><%= estoques[i].ultima_compra %></td>
+                        <td>
+                            <!-- <a class="btn btn-outline" href="/admin/estoque/editar/<%= estoques[i].id %>" >Editar</a> -->
+                            <a class="btn btn-outline" href="/admin/estoque/excluir/<%= estoques[i].id %>">Excluir</a>
+    
+                            <form action="/admin/estoque/editar/<%= estoques[i].id %>" method="GET" >
+                                <input type="submit" value="editar" name="">
+                             </form>
+    
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    <%}%>
+    <a href="/admin/estoque/form/cadastrar" class="addSupplies" >+</a>
+</body>
+</html>
+
+  

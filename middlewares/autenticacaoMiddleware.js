@@ -1,11 +1,14 @@
-const autenticacaoMiddleware = (req, res, next) => {
+const autenticacaoMiddleware = function (req, res, next)  {
+  
+  if(typeof req.session.TheLordOfTheBurguerAdminUser == "undefined"){
+    res.redirect("/login");
+    return;
 
+  }
   if (true)
    {
-        next();
-        return;
+       next();
     }
-    res.redirect("/");
 }
 
 module.exports = autenticacaoMiddleware;

@@ -3,12 +3,15 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var autenticacaoMiddleware = require("./middlewares/autenticacaoMiddleware");
+var session = require("express-session");
 
-var indexRouter = require('./routes/login/index');
-var usersRouter = require('./routes/users');
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/NovoClienteRouter');
+var adminRouter = require('./routes/admin/index');
+var loginRouter = require('./routes/admin/LoginRouter');
 
 var app = express();
+app.use(session ( { secret: "TheLordOfTheBurguer" } )); //criar um dotenv
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -20,8 +23,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//app.use('/', function(req, res, next) {  res.render('login/login') });
-app.use('/', autenticacaoMiddleware, indexRouter);
+app.use('/', loginRouter);
+app.use('/admin',adminRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
