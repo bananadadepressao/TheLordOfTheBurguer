@@ -10,9 +10,6 @@ const LoginController = {
 
         const  acessoLivreDS = await db.Usuario.findOne({ where: { email: email} });
 
-        console.log('USUÁRIO <<<<<<<<<<<<<<<<<<<<<,');
-        console.log(acessoLivreDS.dataValues);
-
         if(acessoLivreDS == null){
             res.redirect("/admin/login")
         }     

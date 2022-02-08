@@ -20,16 +20,18 @@ module.exports = {
             type: Sequelize.DataTypes.STRING(45), 
             allowNull: false 
         },
-        tipo: { 
-            type: Sequelize.DataTypes.STRING(45), 
-            allowNull: false 
+        ultima_atualizacao: {
+            type: Sequelize.DataTypes.DATEONLY,
+            allowNull: false
         },
         categoria: { 
             type: Sequelize.DataTypes.STRING(45), 
             allowNull: false 
         },
-        
-      
+        id_hamburgueria: {
+            type: Sequelize.DataTypes.INTEGER.UNSIGNED,
+            allowNull: false
+        },
         createdAt: Sequelize.DataTypes.DATE,
         updatedAt: Sequelize.DataTypes.DATE,
         deletedAt: Sequelize.DataTypes.DATE

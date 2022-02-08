@@ -201,6 +201,12 @@ body{
     cursor: pointer;
     box-shadow: 3px 3px rgba(0, 0, 0, 0.25);
 }
+.editIcon{
+    color: #000;
+}
+.editIcon:hover{
+    color: #D68910;
+}
 .searchBox{
     width: 40%;
     height: 36px;
@@ -293,7 +299,6 @@ body{
     box-sizing: border-box;
     display: block;
     margin-bottom: 24px;
-    color: #D68910;
 }
 .standartInput:hover{
     border: 2px solid #d68a106b;
@@ -315,7 +320,6 @@ body{
     box-sizing: border-box;
     display: block;
     margin-bottom: 24px;
-    color: #D68910;
 }
 .tinyInput:hover{
     border: 2px solid #d68a106b;
@@ -331,7 +335,6 @@ body{
     display: block;
     margin-bottom: 24px;
     padding-left: 12px;
-    color: #D68910;
 }
 .standartSelect:hover{
     border: 2px solid #d68a106b;
@@ -347,9 +350,12 @@ body{
     background: #D68910;
     color: white;
     right: -40%;
+    border: none;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
 }
 .submitBtn:hover{
     cursor: pointer;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.25);
 }
 .titleRegister{
     position: absolute;

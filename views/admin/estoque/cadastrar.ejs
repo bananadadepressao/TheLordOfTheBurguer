@@ -27,46 +27,36 @@
 
     <h1 class="titleRegister">Cadastro de Item</h1>
 
-    <form action="/admin/estoque/form/cadastrar" method="POST" class="formContent">
+    <form action="/admin/estoque/cadastrar" method="POST" class="formContent">
         <label for="item" class="standartLabel">Nome do Item</label>
-        <input type="text" name="item" placeholder="item" class="standartInput"value="<%= estoque.item %>">
+        <input type="text" name="item" placeholder="Item" class="standartInput"value="<%= estoque.item %>">
 
 
-        <label for="caregoria" class="standartLabel">Categoria</label>
-        <select name="categoria" id="Categoria" class="standartSelect">
-            <option value="" selected disabled hidden style="color: #c4c4c4;">Categoria</option>
-            <option value="">Alimento</option>
-            <option value="">Bebida</option>
+        <label for="categoria" class="standartLabel">Categoria</label>
+        <select id="Categoria" class="standartSelect" name="categoria">
+            <option value="Categoria" selected disabled hidden style="color: hsl(0, 0%, 77%);">Categoria</option>
+            <option value="Alimentos">Alimentos</option>
+            <option value="Bebidas">Bebidas</option>
+            <option value="Molhos">Molhos</option>
         </select>
 
-        <label for="tipo" class="standartLabel">Tipo</label>
-        <select name="tipo" id="tipo" class="standartSelect">
-            <option value="" selected disabled hidden style="color: #c4c4c4;">Tipo</option>
-            <option value="">Garrafa</option>
-            <option value="">Lata</option>
-        </select>
         <div class="tinyInputsContent">
         
             <div>
                 <label for="quantidade" class="standartLabel">Qtd.</label>
-                <input type="number" name="quantidade" placeholder="quantidade" class="tinyInput" value="<%= estoque.quantidade %>" >
+                <input type="number" name="quantidade" placeholder="Quantidade" class="tinyInput" value="<%= estoque.quantidade %>" >
             </div>
 
             <div>
-                <label for="quantidade_minima" class="standartLabel">quantidade_minima</label>
-                <input type="number" name="quantidade_minima" placeholder="quantidade_minima" class="tinyInput" value="<%= estoque.quantidade_minima %>" >
+                <label for="quantidade_minima" class="standartLabel">Quantidade Mínima</label>
+                <input type="number" name="quantidade_minima" placeholder="Quantidade mínima" class="tinyInput" value="<%= estoque.quantidade_minima %>" >
             </div>
         </div>
 
         <label for="ultima_compra" class="standartLabel">Última Compra</label>
-        <input type="date" name="ultima_compra" placeholder="Data da Última Compra" class="standartInput" value="<%= estoque.ultima_compra %>" >
+        <input type="date" name="ultima_compra" placeholder="Data da última compra" class="standartInput" value="<%= estoque.ultima_compra %>" >
 
-
-        <input type="submit" value="Cadastrar" name="">
-
-
-        <a type="submit" value="Cadastrar"class="btn btn-outline" href="/admin/estoque">cadastrar</a>
-
+        <input type="submit" value="Cadastrar" name="" class="submitBtn">
     </form>
 </body>
 </html>
