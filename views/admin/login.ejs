@@ -21,13 +21,19 @@
                 <label class="form-label"  for="floatingImput"></label>
                 <input type="password" class="inputLogin" placeholder="Senha" style="margin-bottom: 0px;" value="" name="senha" id="floatingImput">
 
-                <p class="forgotPassword">Esqueci minha senha</p>
 
                 <input type="submit" value="LOGIN" class="inputBtn">
+
+               
             </form>
 
-            <form action="/users/cadastro" method="GET">
-                <input type="submit" value="Cadastrar">
+            <form action="/users/cadastro" method="GET" class="formLogin">
+
+                <input action="/users/cadastro" method="GET"
+                type="submit" value="Cadastrar" class="inputBtn">
+
+                <a href="/admin/usuarios" class="forgotPassword"  >Esqueci minha senha</a>
+
             </form>
         </div>
     </div>

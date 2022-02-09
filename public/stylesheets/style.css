@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@400;700&display=swap');
 
 body{
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     margin: 0;
     font-family: 'Roboto Condensed', sans-serif;
     display: flex;
@@ -15,18 +15,18 @@ body{
 
 .bodyLogin{
     background-position: bottom top;
-    background-image: url(../img/backgroundlogin.jpg);
+    background-image: url(../images/backgroundlogin.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .boxLogin{
     width: 360px;
-    height: 500px;
+    height: 600px;
     position: absolute;
     top: 80px;
-    left: 240px;
     background-color: white;
     box-shadow: 8px 8px rgba(0, 0, 0, 0.25);
+    inline-size: auto;
 }
 .forgotPassword{
     margin-right: 10%;
@@ -64,7 +64,7 @@ body{
     margin-bottom: 36px;
     padding: 12px;
     width: 80%;
-    height: 36px;
+    height: 60px;
     background: rgba(204, 204, 204, 0.4);
     box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
     border: 1px solid rgba(204, 204, 204, 0.4);

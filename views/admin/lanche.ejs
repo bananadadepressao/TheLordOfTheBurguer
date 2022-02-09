@@ -28,9 +28,11 @@
 
     <h1 class="titleRegister">Cadastro no Cardápio</h1>
 
-    <form action="" class="formContent">
+    <form action="/admin/lanche/cadastrar" method="POST" class="formContent">
+
+        
         <label for="lanche" class="standartLabel">Nome do Lanche</label>
-        <input type="text" name="lanche" placeholder="Lanche" class="standartInput">
+        <input value="" type="text" name="lanche" placeholder="Lanche" class="standartInput">
 
         <label for="Caregoria" class="standartLabel">Categoria</label>
         <select name="Categoria" id="Categoria" class="standartSelect">
@@ -49,7 +51,7 @@
         <label for="description" class="standartLabel">Descrição</label>
         <textarea name="description" id="description" cols="30" rows="10"></textarea>
 
-        <input type="submit" value="Cadastrar" class="submitBtn">
+        <input href="" type="submit" value="Cadastrar" class="submitBtn">
     </form>
 </body>
 </html>

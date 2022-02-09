@@ -4,6 +4,7 @@ var router = express.Router();
 var UsuariosRouter = require ("./UsuariosRouter");
 var EstoqueRouter = require ("./EstoqueRouter");
 var CadastrarEstoqueRouter = require ("./CadastrarEstoqueRouter");
+var LancheRouter = require ("./LancheRouter");
 
 var autenticacaoMiddleware = require("../../middlewares/autenticacaoMiddleware");
 
@@ -17,8 +18,8 @@ router.get('/estoque',EstoqueRouter);
 router.use('/estoque/form',CadastrarEstoqueRouter);
 
 
-router.use("/usuarios",UsuariosRouter);
-
+router.use('/usuarios',UsuariosRouter);
+router.use('/lanche',LancheRouter);
 
 
 

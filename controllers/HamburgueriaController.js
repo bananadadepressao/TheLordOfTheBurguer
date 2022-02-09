@@ -32,7 +32,7 @@ const HamburgueriaController = {
             console.log('FALHOU NO CADASTRO DA HAMBURGUERIA <<<<<<<<<<<<<<');
         }
 
-        res.redirect('/admin/login');
+        res.redirect('/login');
     }
 }
 
