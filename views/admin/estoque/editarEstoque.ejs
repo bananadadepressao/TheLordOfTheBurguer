@@ -10,8 +10,6 @@
 </head>
 
 <body>
-    <input type="text" class="searchBox" placeholder="Pesquisar">
-
     <div class="nav">
         <div class="pageSelection">
             <a href="#">
@@ -29,10 +27,19 @@
     </div>
 
     <% if(estoques.length == 0) {%>
-        <img src="/images/nothingFound.png" alt="Nenhum item cadastrado no estoque">
+        <div  class="notFound">
+            <img src="/images/nothingFound.png" alt="Nenhum item cadastrado no estoque">
+            <h3>Não há nenhum item cadastrado em seu estoque!</h3>
+        </div>
     <%} else{%>
+        <form action="/admin/estoque" method="GET">
+            <input type="text" class="searchBox" name="search">
+            <input type="submit" value="Pesquisar" class="searchBtn">
+        </form>
+
+        
         <h2 class="subtitle">Todo o Estoque</h2>
-        <% if(estoques.length > 0) {%>
+        <% if(estoques.length > 1) {%>
             <p class="subsubtitle"><%= estoques.length %> itens</p>
         <%} else{%>
             <p class="subsubtitle"><%= estoques.length %> item</p>
@@ -57,7 +64,7 @@
                         <td><%= estoques[i].ultima_atualizacao %></td>
                         <td><%= estoques[i].categoria %></td>
                         <td>
-                            <a href="/admin/estoque/cadastrar" class="editIcon"><i class="far fa-edit"></i></a>
+                            <a href="/admin/estoque/cadastrar/<%= estoques[i].id %>" class="editIcon"><i class="far fa-edit"></i></a>
                         </td>
                     </tr>
                 <% } %>

@@ -25,38 +25,79 @@
         </div>
     </div>
 
-    <h1 class="titleRegister">Cadastro de Item</h1>
+    <%if(estoque.nome == undefined){%>
+        <h1 class="titleRegister">Cadastro de Item</h1>
 
-    <form action="/admin/estoque/cadastrar" method="POST" class="formContent">
-        <label for="item" class="standartLabel">Nome do Item</label>
-        <input type="text" name="item" placeholder="Item" class="standartInput"value="<%= estoque.item %>">
-
-
-        <label for="categoria" class="standartLabel">Categoria</label>
-        <select id="Categoria" class="standartSelect" name="categoria">
-            <option value="Categoria" selected disabled hidden style="color: hsl(0, 0%, 77%);">Categoria</option>
-            <option value="Alimentos">Alimentos</option>
-            <option value="Bebidas">Bebidas</option>
-            <option value="Molhos">Molhos</option>
-        </select>
-
-        <div class="tinyInputsContent">
+            <form action="/admin/estoque/cadastrar" method="POST" class="formContentRegister">
+                <label for="item" class="standartLabel">Nome do Item</label>
+                <input type="text" name="item" placeholder="Item" class="standartInput"value="<%= estoque.nome %>">
         
-            <div>
-                <label for="quantidade" class="standartLabel">Qtd.</label>
-                <input type="number" name="quantidade" placeholder="Quantidade" class="tinyInput" value="<%= estoque.quantidade %>" >
+        
+                <label for="categoria" class="standartLabel">Categoria</label>
+                <select id="Categoria" class="standartSelect" name="categoria">
+                    <option value="Categoria" selected disabled hidden style="color: hsl(0, 0%, 77%);">Categoria</option>
+                    <option value="Alimentos">Alimentos</option>
+                    <option value="Bebidas">Bebidas</option>
+                    <option value="Molhos">Molhos</option>
+                </select>
+        
+                <div class="tinyInputsContent">
+                
+                    <div>
+                        <label for="quantidade" class="standartLabel">Qtd.</label>
+                        <input type="number" name="quantidade" placeholder="Quantidade" class="tinyInput" value="<%= estoque.quantidade %>" >
+                    </div>
+        
+                    <div>
+                        <label for="quantidade_minima" class="standartLabel">Quantidade Mínima</label>
+                        <input type="number" name="quantidade_minima" placeholder="Quantidade mínima" class="tinyInput" value="<%= estoque.quantidade_minima %>" >
+                    </div>
+                </div>
+        
+                <label for="ultima_compra" class="standartLabel">Última Compra</label>
+                <input type="date" name="ultima_compra" placeholder="Data da última compra" class="standartInput" value="<%= estoque.ultima_atualizacao %>" >
+        
+                <input type="submit" value="Cadastrar" name="" class="submitBtn"">
+            </form>
+        <%} else{%>
+            <h1 class="titleRegister">Editar Item</h1>
+    
+            <div class="contentRegisterFormExclude">
+                <form action="/admin/estoque/atualizar/<%= estoque.id %>?_method=PUT" method="POST"  class="formContentExclude">
+                    <label for="item" class="standartLabel">Nome do Item</label>
+                    <input type="text" name="item" placeholder="Item" class="standartInput"value="<%= estoque.nome %>">
+            
+            
+                    <label for="categoria" class="standartLabel">Categoria</label>
+                    <select id="Categoria" class="standartSelect" name="categoria">
+                        <option value="Categoria" selected disabled hidden style="color: hsl(0, 0%, 77%);">Categoria</option>
+                        <option value="Alimentos">Alimentos</option>
+                        <option value="Bebidas">Bebidas</option>
+                        <option value="Molhos">Molhos</option>
+                    </select>
+            
+                    <div class="tinyInputsContent">
+                    
+                        <div>
+                            <label for="quantidade" class="standartLabel">Qtd.</label>
+                            <input type="number" name="quantidade" placeholder="Quantidade" class="tinyInput" value="<%= estoque.quantidade %>" >
+                        </div>
+            
+                        <div>
+                            <label for="quantidade_minima" class="standartLabel">Quantidade Mínima</label>
+                            <input type="number" name="quantidade_minima" placeholder="Quantidade mínima" class="tinyInput" value="<%= estoque.quantidade_minima %>" >
+                        </div>
+                    </div>
+            
+                    <label for="ultima_compra" class="standartLabel">Última Compra</label>
+                    <input type="date" name="ultima_compra" placeholder="Data da última compra" class="standartInput" value="<%= estoque.ultima_atualizacao %>" >
+            
+                    <input type="submit" value="Atualizar" name="" class="submitBtn">
+                </form>
+                <form action="/admin/estoque/excluir/<%= estoque.id %>?_method=DELETE" method="POST" >
+                    <input type="submit" value="Excluir" name="" class="excludeBtn">
+                </form>
             </div>
-
-            <div>
-                <label for="quantidade_minima" class="standartLabel">Quantidade Mínima</label>
-                <input type="number" name="quantidade_minima" placeholder="Quantidade mínima" class="tinyInput" value="<%= estoque.quantidade_minima %>" >
-            </div>
-        </div>
-
-        <label for="ultima_compra" class="standartLabel">Última Compra</label>
-        <input type="date" name="ultima_compra" placeholder="Data da última compra" class="standartInput" value="<%= estoque.ultima_compra %>" >
-
-        <input type="submit" value="Cadastrar" name="" class="submitBtn">
-    </form>
+    <%}%>
 </body>
 </html>
