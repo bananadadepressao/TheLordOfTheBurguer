@@ -70,10 +70,21 @@
             
                     <label for="categoria" class="standartLabel">Categoria</label>
                     <select id="Categoria" class="standartSelect" name="categoria">
-                        <option value="Categoria" selected disabled hidden style="color: hsl(0, 0%, 77%);">Categoria</option>
-                        <option value="Alimentos">Alimentos</option>
-                        <option value="Bebidas">Bebidas</option>
-                        <option value="Molhos">Molhos</option>
+                        <% if(estoque.categoria == "Alimentos"){%>
+                            <option value="Alimentos" selected>Alimentos</option>
+                        <% } else {%>
+                            <option value="Alimentos">Alimentos</option>
+                        <% } %>
+                        <% if(estoque.categoria == "Bebidas"){%>
+                            <option value="Bebidas" selected>Bebidas</option>
+                        <% } else {%>
+                            <option value="Bebidas">Bebidas</option>
+                        <% } %>
+                        <% if(estoque.categoria == "Molhos"){%>
+                            <option value="Molhos" selected>Molhos</option>
+                        <% } else {%>
+                            <option value="Molhos">Molhos</option>
+                        <% } %>
                     </select>
             
                     <div class="tinyInputsContent">

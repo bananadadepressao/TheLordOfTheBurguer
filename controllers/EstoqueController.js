@@ -1,17 +1,30 @@
 const { map } = require("../app");
+const { Sequelize } = require("../database/models");
 const db = require("../database/models");
+const Op = Sequelize.Op;
 
 const EstoqueController = {
     listar: async (req, res) => {
-        console.log(req.query.search);
+        var itens = [];
 
-        db.Estoque.findAll({ where: {id_hamburgueria: req.session.TheLordOfTheBurguerAdminUser.id_hamburgueria}}).then((e) => {
-            var itens = [];
-            e.forEach((item) => {
-                itens.push(item.dataValues);
+        if(req.query.search != undefined){
+            const query = `%${req.query.search}%`; 
+            console.log(req.query.search);
+
+            db.Estoque.findAll({ where: {id_hamburgueria: req.session.TheLordOfTheBurguerAdminUser.id_hamburgueria, nome: {[Op.like]: query}}}).then((e) => {
+                e.forEach((item) => {
+                    itens.push(item.dataValues);
+                });
+                res.render("admin/estoque/editarEstoque",{ estoques: itens });
             });
-            res.render("admin/estoque/editarEstoque",{ estoques: itens });
-        });
+        } else{
+            db.Estoque.findAll({ where: {id_hamburgueria: req.session.TheLordOfTheBurguerAdminUser.id_hamburgueria}}).then((e) => {
+                e.forEach((item) => {
+                    itens.push(item.dataValues);
+                });
+                res.render("admin/estoque/editarEstoque",{ estoques: itens });
+            });
+        }
     },
 
     cadastrar: async (req,res) => {
