@@ -4,23 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/730d5389e8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../stylesheets/style.css">
     <title>Login</title>
 </head>
-<body class="bodyLogin">
+<body>
+        <input type="text" class="searchBox" placeholder="Pesquisar">
+    
+        <div class="nav">
+            <a href="/admin/estoque"></a>
+            <div class="pageSelection">
+                <a href="#">
+                    <i class="fas fa-bacon"></i>
+                    <span>Estoque</span>
+                </a>
+            </div>
+    
+            <div class="pageSelection">
+                <a href="#">
+                    <i class="fas fa-hamburger"></i>
+                    <span>Lanches</span>
+                </a>
+            </div>
+    
+            <div class="pageSelection">
+                <a href="/admin/estoque"></a>
+                    <i class="fas fa-user"></i>
+                    <span>Usuários</span>
+                </a>
+            </div>
+    
+            <div class="pageSelection">
+                <a href="#">
+                    <i class="fa fa-screwdriver-wrench"></i>
+                    <span>Configuração</span>
+                </a>
+            </div>
+    
+        </div>
+    
     <div class="lensLogin"></div>
     <div class="boxLogin">
-        <h1 class="titleLogin">Usuarios</h1>
-        <div>
-            <form action="<%= formAction %>" method="POST" class="formLogin"> 
-                <label class="form-label"></label>
-                <input type="text" class="inputLogin" placeholder="Nome" value="<%= usuario.nome %>" name="nome" >
-                
-                <label class="form-label"></label>
-                <input type="text" class="inputLogin" placeholder="E-mail" value="<%= usuario.email %>" name="email" >
+        <h1 class="subtitle">Usuarios</h1>
 
-                <label class="form-label"></label>
-                <input type="password" class="inputLogin" placeholder="Senha" style="margin-bottom: 0px;"  value="<%= usuario.senha %>" name="senha" >
+        <div>
+            <form action="<%= formAction %>" method="POST" class="formContent"> 
+                <label class="standartLabel"></label>
+                <input type="text" class="standartInput" placeholder="Nome" value="<%= usuario.nome %>" name="nome" >
+                
+                <label class="standartLabel"></label>
+                <input type="text" class="standartInput" placeholder="E-mail" value="<%= usuario.email %>" name="email" >
+
+                <label class="standartLabel"></label>
+                <input type="password" class="standartInput" placeholder="Senha" style="margin-bottom: 0px;"  value="<%= usuario.senha %>" name="senha" >
                 
                 <input type="submit" value="<%= buttonMessage %>" class="inputBtn">
             </form>
@@ -29,6 +65,6 @@
 </body>
 </html>
 
-.
+
 
 
