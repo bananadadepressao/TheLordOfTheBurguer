@@ -36,13 +36,11 @@
                 <label for="categoria" class="standartLabel">Categoria</label>
                 <select id="Categoria" class="standartSelect" name="categoria">
                     <option value="Categoria" selected disabled hidden style="color: hsl(0, 0%, 77%);">Categoria</option>
-                    <option value="Alimentos">Alimentos</option>
+                    <option value="Ingredientes">Ingredientes</option>
                     <option value="Bebidas">Bebidas</option>
-                    <option value="Molhos">Molhos</option>
                 </select>
         
                 <div class="tinyInputsContent">
-                
                     <div>
                         <label for="quantidade" class="standartLabel">Qtd.</label>
                         <input type="number" name="quantidade" placeholder="Quantidade" class="tinyInput" value="<%= estoque.quantidade %>" >
@@ -57,7 +55,7 @@
                 <label for="ultima_compra" class="standartLabel">Última Compra</label>
                 <input type="date" name="ultima_compra" placeholder="Data da última compra" class="standartInput" value="<%= estoque.ultima_atualizacao %>" >
         
-                <input type="submit" value="Cadastrar" name="" class="submitBtn"">
+                <input type="submit" value="Cadastrar" name="" class="submitBtn">
             </form>
         <%} else{%>
             <h1 class="titleRegister">Editar Item</h1>
@@ -71,19 +69,14 @@
                     <label for="categoria" class="standartLabel">Categoria</label>
                     <select id="Categoria" class="standartSelect" name="categoria">
                         <% if(estoque.categoria == "Alimentos"){%>
-                            <option value="Alimentos" selected>Alimentos</option>
+                            <option value="Ingredientes" selected>Ingredientes</option>
                         <% } else {%>
-                            <option value="Alimentos">Alimentos</option>
+                            <option value="Ingredientes">Ingredientes</option>
                         <% } %>
                         <% if(estoque.categoria == "Bebidas"){%>
                             <option value="Bebidas" selected>Bebidas</option>
                         <% } else {%>
                             <option value="Bebidas">Bebidas</option>
-                        <% } %>
-                        <% if(estoque.categoria == "Molhos"){%>
-                            <option value="Molhos" selected>Molhos</option>
-                        <% } else {%>
-                            <option value="Molhos">Molhos</option>
                         <% } %>
                     </select>
             

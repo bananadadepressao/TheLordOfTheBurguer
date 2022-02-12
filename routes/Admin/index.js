@@ -3,6 +3,7 @@ const { route } = require('../../app');
 var router = express.Router();
 var UsuariosRouter = require ("./UsuariosRouter");
 var EstoqueRouter = require ("./EstoqueRouter");
+var CardapioRouter = require("./CardapioRouter");
 
 var autenticacaoMiddleware = require("../../middlewares/autenticacaoMiddleware");
 
@@ -14,10 +15,8 @@ router.get('/', function(req, res, next) {
 
 router.use('/estoque', EstoqueRouter);
 
+router.use("/cardapio", CardapioRouter);
+
 router.use("/usuarios",UsuariosRouter);
-
-
-
-
 
 module.exports = router;

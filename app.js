@@ -6,10 +6,10 @@ var logger = require('morgan');
 var session = require("express-session");
 var methodOverride = require('method-override');
 
-var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/NovoClienteRouter');
 var adminRouter = require('./routes/admin/index');
 var loginRouter = require('./routes/admin/LoginRouter');
+
 
 var app = express();
 app.use(session ( { secret: "TheLordOfTheBurguer" } )); //criar um dotenv
@@ -29,6 +29,9 @@ app.use('/', loginRouter);
 app.use('/admin',adminRouter);
 app.use('/users', usersRouter);
 
+app.use((req, res) => {
+  return res.status(404).render('not-found')
+});
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

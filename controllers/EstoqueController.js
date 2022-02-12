@@ -9,8 +9,7 @@ const EstoqueController = {
 
         if(req.query.search != undefined){
             const query = `%${req.query.search}%`; 
-            console.log(req.query.search);
-
+            
             db.Estoque.findAll({ where: {id_hamburgueria: req.session.TheLordOfTheBurguerAdminUser.id_hamburgueria, nome: {[Op.like]: query}}}).then((e) => {
                 e.forEach((item) => {
                     itens.push(item.dataValues);

@@ -15,7 +15,7 @@ body{
 
 .bodyLogin{
     background-position: bottom top;
-    background-image: url(../img/backgroundlogin.jpg);
+    background-image: url(../images/backgroundlogin.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -408,7 +408,7 @@ body{
     outline-color:  #D68910;
 }
 .submitBtn{
-    position: relative;
+    position: absolute;
     width: 100px;
     height: 36px;
     font-size: 18px;
@@ -416,7 +416,7 @@ body{
     color: white;
     right: 0%;
     border: none;
-    left: 40%;
+    right: 50%;
     box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
 }
 .submitBtn:hover{
@@ -431,6 +431,53 @@ body{
     left: 20%;
 }
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> End Shared Between register#general#Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Register Food <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+.addIngrediente{
+    position: absolute;
+    background: #D68910;
+    color: white;
+    font-size: 24px;
+    border: none;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+    right: 50%;
+}
+.addIngrediente:hover{
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.25);
+}
+.formContentRegister textarea{
+    display: block;
+    margin-bottom: 24px;
+}
+.formContentRegister textarea:hover{
+    border: 2px solid #d68a106b;
+}
+.formContentRegister textarea:focus{
+    outline-color:  #D68910;
+}
+.standardLabelFoodDescription{
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    margin-top: 36px;
+    margin-bottom: 8px;
+}
+.standartSelectFood{
+    width: 50%;
+    height: 36px;
+    font-size: 18px;
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: 8px;
+    padding-left: 12px;
+}
+.standartSelectFood:hover{
+    border: 2px solid #d68a106b;
+}
+.standartSelectFood:focus{
+    outline-color:  #D68910;
+}
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> End Register Food Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Order Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 .addLanch{

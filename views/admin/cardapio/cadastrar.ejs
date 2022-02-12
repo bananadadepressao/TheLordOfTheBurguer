@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/730d5389e8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Cadastro no Cardápio</title>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="pageSelection">
+            <a href="/admin/estoque">
+                <i class="fas fa-bacon"></i>
+                <span>Estoque</span>
+            </a>
+        </div>
+
+        <div class="pageSelection">
+            <a href="/admin/cardapio">
+                <i class="fas fa-hamburger"></i>
+                <span>Lanches</span>
+            </a>
+        </div>
+    </div>
+
+    <%if(lanche.nome == undefined){%>
+        <h1 class="titleRegister">Cadastro de Item no Cardápio</h1>
+
+        <form action="" class="formContentRegister">
+            <label for="lanche" class="standartLabel">Nome do Lanche / Bebida</label>
+            <input type="text" name="lanche" placeholder="Nome do Lanche / Bebida" class="standartInput">
+
+            <label for="ingrediente" class="standartLabel">Adicionar Ingredientes / Bebidas</label>
+            <div id="selectIngredient"></div>
+            <select class="standartSelectFood" name="ingrediente">
+                <option selected disabled hidden style="color: hsl(0, 0%, 77%);">Ingrediente / Bebida</option>
+                <%ingredientes.forEach((i) => {%>
+                    <option value="<%= i.id %>"><%= i.nome %></option>
+                <%})%>
+            </select>
+            <button type="button" class="addIngrediente">+</button>
+
+            <label for="description" class="standardLabelFoodDescription">Descrição</label>
+            <textarea name="description" cols="60" rows="10"></textarea>
+    
+            <input type="submit" value="Cadastrar" class="submitBtn">
+        </form>
+        <%} else{%>
+            <h1 class="titleRegister">Editar Item</h1>
+    
+            <div class="contentRegisterFormExclude">
+                <form action="/admin/estoque/atualizar/<%= estoque.id %>?_method=PUT" method="POST"  class="formContentExclude">
+                    <label for="lanche" class="standartLabel">Nome do Lanche</label>
+                    <input type="text" name="lanche" placeholder="Nome do Lanche" class="standartInput">
+            
+                    <label for="description" class="standartLabel">Descrição</label>
+                    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+            
+                    <input type="submit" value="Atualizar" name="" class="submitBtn">
+                </form>
+                <form action="/admin/estoque/excluir/<%= estoque.id %>?_method=DELETE" method="POST" >
+                    <input type="submit" value="Excluir" name="" class="excludeBtn">
+                </form>
+            </div>
+    <%}%>
+
+    <script type="text/javascript">
+        let addBtn = document.querySelector(".addIngrediente");
+        let showIngredient = document.querySelector("#selectIngredient");
+        let qtdItens = "<%= ingredientes.length %>";
+        let itensData = [];
+
+        for(let i = 0; i < "<%= ingredientes.length %>"; i++){
+            itensData.push({
+                id: "<%= ingredientes[i].id %>",
+                nome: "<%= ingredientes[i].nome %>",
+            });
+        }
+
+        addBtn.addEventListener('click', function(){
+            let ingredient = document.createElement("select");
+
+            console.log(itensData);
+
+            ingredient.style.width = "50%";
+            ingredient.style.height = "36px";
+            ingredient.style.fontSize = "18px";
+            ingredient.style.boxSizing = "border-box";
+            ingredient.style.display = "block";
+            ingredient.style.marginBottom = "8px";
+            ingredient.style.paddingLeft = "12px";
+
+            showIngredient.append(ingredient);
+        });
+    </script>
+</body>
+</html>
