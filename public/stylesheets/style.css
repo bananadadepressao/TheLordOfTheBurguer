@@ -44,7 +44,7 @@ body{
     justify-content: center;
 }
 .inputBtn{
-    margin-top: 48px;
+    margin-top: 20px;
     padding: 12px;
     width: 80%;
     height: 48px;
@@ -61,16 +61,19 @@ body{
     box-shadow: 3px 3px rgba(0, 0, 0, 0.25);
 }
 .inputLogin{
-    margin-bottom: 36px;
+    margin: 37px;
+    margin-bottom: 28px;
+    margin-top: 5px;
     padding: 12px;
     width: 80%;
-    height: 36px;
-    background: rgba(204, 204, 204, 0.4);
+    height: 48px;
+    background: #D68910;
     box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
-    border: 1px solid rgba(204, 204, 204, 0.4);
+    border: 1px solid #D68910;
     border-radius: 4px;
     box-sizing: border-box;
-    color: #D68910;
+    color: white;
+    
 }
 .inputLogin:hover{
     border: 2px solid #d68a106b;
@@ -91,6 +94,19 @@ body{
     margin-bottom: 64px;
     font-size: 56px;
     text-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+}
+.inputBb{
+    margin-top: 20px;
+    padding: 12px;
+    width: 50%;
+    height: 48px;
+    background: #D68910;
+    border: 1px solid #D68910;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
 }
 
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END Login Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
@@ -185,7 +201,7 @@ body{
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Shared Between Suplies and Food Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 .addSupplies{
     width: 80px;
-    height: 80px;
+    height: 63px;
     background: #D68910;
     color: white;
     border-radius: 50%;
@@ -281,9 +297,11 @@ body{
 
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Shared Between register#general#Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 .formContent{
-    position: absolute;
-    width: 60%;
+    position: relative;
+    width: 90%;
     top: 180px;
+    margin-right: 650px;
+
 }
 .standartLabel{
     font-size: 18px;
@@ -361,7 +379,8 @@ body{
     position: absolute;
     color: #D68910;
     font-size: 46px;
-    top: 46px;
+    padding: 8px;
+    top: 51px;
     left: 20%;
 }
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> End Shared Between register#general#Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
@@ -486,3 +505,4 @@ body{
     left: 10%;
 }
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> End Order Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Usuarios Form <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
