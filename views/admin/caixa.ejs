@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/730d5389e8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Caixa - Pedido</title>
+</head>
+<body class="bodyBox">
+    <%- include("../partials/sidebar") %>
+
+    <div class="models">
+        <div class="models-item">
+            <a href="#">
+                <div class="models-item-img">
+                    <img src="" alt="">
+                </div>
+                <div class="models-item-add">+</div>
+            </a>
+            <div class="models-item-price">R$ --</div>
+            <div class="models-item-name">--</div>
+            <div class="models-item-desc">--</div>
+        </div>
+        <div class="cart-item">
+            <img src="" alt="">
+            <div class="cart-item-qtarea">
+                <button class="cart-item-qtmenos">-</button>
+                <div class="cart-item-qt">1</div>
+                <button class="cart-item-qtmais">+</button>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="menu-openner">
+            <span>0</span>
+            <span class="material-icons">shopping_cart</span>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="titleCashier">Caixa - Pedidos</h1>
+        <div class="models-area"></div>
+    </main>
+
+    <aside>
+        <div class="cart-area">
+            <div class="menu-closer">
+                <span class="material-icons">close</span>
+            </div>
+            <h1>Seus modelos</h1>
+            <div class="cart"></div>
+            <div class="cart-details">
+                <div class="cart-total-item subtotal">
+                    <span>Subtotal</span>
+                    <span>R$ --</span>
+                </div>
+                <div class="cart-totalitem desconto">
+                    <span>Desconto (-10%)</span>
+                    <span>R$ --</span>
+                </div>
+                <div class="cart-finalizar">Finalizar Compra</div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="modelsWindowArea">
+        <div class="modelWindowBody">
+            <div class="modelsInfo-cancelMobileButton">Voltar</div>
+            <div class="modelsBig">
+                <img src="" alt="">
+            </div>
+            <div class="modelsInfo">
+                <h1 class="h11">--</h1>
+                <div class="modelsInfo-desc">--</div>
+                <div class="modelsInfo-sizearea">
+                    <div class="modelsInfo-sector">Escala</div>
+                    <div class="modelsInfo-sizes">
+                        <div data-key="0" class="modelsInfo-size">1/72<span>--</span></div>
+                    </div>
+                    <div class="modelsInfo-sizes">
+                        <div data-key="1" class="modelsInfo-size">1/48<span>--</span></div>
+                    </div>
+                    <div class="modelsInfo-sizes">
+                        <div data-key="1" class="modelsInfo-size">1/32<span>--</span></div>
+                    </div>
+                </div>
+
+                <div class="modelsInfo-pricearea">
+                    <div class="modelsInfo-sector">Preço</div>
+                    <div class="modelsInfo-price">
+                        <div class="modelsInfo-actualPrice">R$ --</div>
+                        <div class="modelsInfo-qtarea">
+                            <button type="button" class="modelsInfo-qtmenos">-</button>
+                            <div class="modelsInfo-qt">1</div>
+                            <button type="button" class="modelsInfo-qtmais">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modelsInfo-addButton">Adicionar ao Carrinho</div>
+                <div class="modelsInfo-cancelButton">Cancelar</div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="/js/models.js"></script>
+    <script type="text/javascript" >
+        const c = (el) => document.querySelector(el);
+        const cs = (el) => document.querySelector(el);
+        
+        modelsJson.map((item, index) => {
+            let modelsItem = c('.models .models-item').cloneNode(true);
+            /*modelsItem.querySelector('.models-item-img img').src = item.img;
+            modelsItem.querySelector('.models-item-price').innerHTML = `R$ ${item.price[0].toFixed(2)}`;
+            modelsItem.querySelector('.models-item-name').innerHTML = item.name;
+            modelsItem.querySelector('.models-item-desc').innerHTML = item.description;*/
+            c('.models-area').append(modelsItem);
+        });
+    </script>
+    
+   <!--  <section class="contentFilter">
+         <div>
+            <button class="filterBtn">Lanches</button>
+            <button class="filterBtn">Acompanhamentos</button>
+            <button class="filterBtn">Bebidas</button>
+            <button class="filterBtn">Combos</button>
+            <button class="filterBtn">Sobremesas</button>
+            <button class="filterBtn">Snacks</button>
+         </div>
+
+         <input type="text" class="filterByText" placeholder="Pesquisar">
+    </section>
+
+    <section class="contentMenu">
+        <% lanches.forEach((lanche) => { %>
+            <div class="menuItem">
+                <div class="contentImgLanch">
+                    <img src="/images/BBB.png" alt="Lanche BBB" class="imgLanch">
+                </div>
+                <div class="nameAndDescription">
+                    <div><%= lanche.nome %></div>
+                    <div>R$ <%= lanche.preco %></div>
+                    <div style="font-size: 14px; font-weight: 400;"><%= lanche.description %></div>
+                </div>
+                <div>
+                    <button type="button" class="addLanch"><span>+</span></button>
+                    <button type="button" class="removeLanch"><span>-</span></button>
+                </div>
+            </div>
+        <% }) %>
+    </section>
+
+    <section class="selectedItens"></section>
+
+    <button class="addSupplies"><i class="fas fa-thumbs-up"></i></button>
+
+    <script type="text/javascript">
+        let addBtn = document.querySelector(".addLanch");
+        let rmvBtn = document.querySelector(".removeLanch");
+        let feedSelection = document.querySelector(".selectedItens");
+
+        addBtn.addEventListener('click', function(){
+            console.log('AddBtn Clicked');
+        });
+
+        rmvBtn.addEventListener('click', function(){
+            console.log('RmvBtn Clicked');
+        });
+
+    </script> -->
+</body>
+</html>

@@ -10,21 +10,7 @@
 </head>
 
 <body>
-    <div class="nav">
-        <div class="pageSelection">
-            <a href="/admin/estoque">
-                <i class="fas fa-bacon"></i>
-                <span>Estoque</span>
-            </a>
-        </div>
-
-        <div class="pageSelection">
-            <a href="/admin/cardapio">
-                <i class="fas fa-hamburger"></i>
-                <span>Lanches</span>
-            </a>
-        </div>
-    </div>
+    <%- include("../../partials/sidebar") %>
 
     <%if(lanche.nome == undefined){%>
         <h1 class="titleRegister">Cadastro de Item no Cardápio</h1>
@@ -74,10 +60,9 @@
         let itensData = [];
 
         for(let i = 0; i < "<%= ingredientes.length %>"; i++){
-            itensData.push({
-                id: "<%= ingredientes[i].id %>",
-                nome: "<%= ingredientes[i].nome %>",
-            });
+            console.log("<%= ingredientes%>" + [i] + ".id%>");
+
+            
         }
 
         addBtn.addEventListener('click', function(){

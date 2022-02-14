@@ -9,21 +9,7 @@
     <title>Cadastro de Estoque</title>
 </head>
 <body>    
-    <div class="nav">
-        <div class="pageSelection">
-            <a href="/admin/estoque">
-                <i class="fas fa-bacon"></i>
-                <span>Estoque</span>
-            </a>
-        </div>
-
-        <div class="pageSelection">
-            <a href="#">
-                <i class="fas fa-hamburger"></i>
-                <span>Lanches</span>
-            </a>
-        </div>
-    </div>
+    <%- include("../../partials/sidebar") %>
 
     <%if(estoque.nome == undefined){%>
         <h1 class="titleRegister">Cadastro de Item</h1>

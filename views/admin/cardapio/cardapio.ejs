@@ -9,23 +9,13 @@
     <title>Lanches</title>
 </head>
 <body>
-    <input type="text" class="searchBox" placeholder="Pesquisar">
 
-    <div class="nav">
-        <div class="pageSelection">
-            <a href="/admin/estoque">
-                <i class="fas fa-bacon"></i>
-                <span>Estoque</span>
-            </a>
-        </div>
+    <%- include("../../partials/sidebar") %>
 
-        <div class="pageSelection">
-            <a href="/admin/cardapio">
-                <i class="fas fa-hamburger"></i>
-                <span>Lanches</span>
-            </a>
-        </div>
-    </div>
+    <form action="/admin/estoque" method="GET">
+        <input type="text" class="searchBox" name="search" placeholder="Pesquisar">
+        <button type="submit" class="searchBtn"><i class="fa fa-search"></i></i></button>
+    </form>
 
     <h2 class="subtitle">Todos os Lanches</h2>
     <p class="subsubtitle">6 itens</p>

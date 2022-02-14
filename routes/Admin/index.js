@@ -4,14 +4,13 @@ var router = express.Router();
 var UsuariosRouter = require ("./UsuariosRouter");
 var EstoqueRouter = require ("./EstoqueRouter");
 var CardapioRouter = require("./CardapioRouter");
+var CaixaRouter = require("./CaixaRouter");
 
 var autenticacaoMiddleware = require("../../middlewares/autenticacaoMiddleware");
 
 router.use(autenticacaoMiddleware);
-/* esta index será Tela - Seleção de Pedido  */
-router.get('/', function(req, res, next) {
-  res.render('admin/index');        
-});
+
+router.use('/caixa', CaixaRouter);
 
 router.use('/estoque', EstoqueRouter);
 

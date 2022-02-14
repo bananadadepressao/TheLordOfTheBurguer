@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
     <title>Login</title>
 </head>
-<body class="bodyLogin">
+<body>
+    <div class="bodyLogin"></div>
     <div class="lensLogin"></div>
 
     <div class="boxLogin">
-        <h1 class="titleLogin"> login </h1>
+        <h1 class="titleLogin"> Login </h1>
         <div>
             <form action="/login" method="POST" class="formLogin">
 
@@ -21,13 +22,13 @@
                 <label class="form-label"  for="floatingImput"></label>
                 <input type="password" class="inputLogin" placeholder="Senha" style="margin-bottom: 0px;" value="" name="senha" id="floatingImput">
 
-                <p class="forgotPassword">Esqueci minha senha</p>
-
                 <input type="submit" value="LOGIN" class="inputBtn">
             </form>
 
-            <form action="/users/cadastro" method="GET">
-                <input type="submit" value="Cadastrar">
+            <form action="/users/cadastro" method="GET" class="formLogin">
+                <span class="regLabel">Ainda não é cadastrado? Tá esperando o que?<br>Cadastre-se!</span>
+                <input action="/users/cadastro" method="GET"
+                type="submit" value="CADASTRAR" class="inputBtnAlt">
             </form>
         </div>
     </div>

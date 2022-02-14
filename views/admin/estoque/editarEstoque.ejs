@@ -1,31 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/730d5389e8.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../stylesheets/style.css">
-    <title>Estoque</title>
-</head>
 
-<body>
-    <div class="nav">
-        <div class="pageSelection">
-            <a href="/admin/estoque">
-                <i class="fas fa-bacon"></i>
-                <span>Estoque</span>
-            </a>
-        </div>
+<%- include("../../partials/header") %>
 
-        <div class="pageSelection">
-            <a href="/admin/cardapio">
-                <i class="fas fa-hamburger"></i>
-                <span>Lanches</span>
-            </a>
-        </div>
-
-    </div>
+<%- include("../../partials/sidebar") %>
 
     <% if(estoques.length == 0) {%>
         <div  class="notFound">
