@@ -26,7 +26,7 @@ acaoCadastrar: async (req, res) => {
 
     await db.Usuario.create(usuario);
 
-    res.redirect("/admin/usuarios");
+    res.redirect("usuarios");
 },
 editar: async (req, res) => {
     const usuario = await db.Usuario.findByPk(req.params.id)
