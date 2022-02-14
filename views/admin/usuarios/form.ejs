@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/730d5389e8.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <title>Login</title>
 </head>
 <body>
@@ -28,7 +28,7 @@
             </div>
     
             <div class="pageSelection">
-                <a href="/admin/estoque"></a>
+                <a href="/admin/Usuarios">
                     <i class="fas fa-user"></i>
                     <span>Usuários</span>
                 </a>
@@ -36,19 +36,21 @@
     
             <div class="pageSelection">
                 <a href="#">
-                    <i class="fa fa-screwdriver-wrench"></i>
+                    <i class="fa fa-screwdriver"></i>
                     <span>Configuração</span>
                 </a>
             </div>
     
         </div>
     
-    <div class="lensLogin"></div>
-    <div class="boxLogin">
-        <h1 class="subtitle">Usuarios</h1>
+    <div></div>
+    
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"></div>
+        <h1 class="titleRegister">Usuarios</h1>
 
         <div>
-            <form action="<%= formAction %>" method="POST" class="formContent"> 
+            <form action="<%= formAction %>" method="POST" class= "formContent">
+
                 <label class="standartLabel"></label>
                 <input type="text" class="standartInput" placeholder="Nome" value="<%= usuario.nome %>" name="nome" >
                 
@@ -58,7 +60,7 @@
                 <label class="standartLabel"></label>
                 <input type="password" class="standartInput" placeholder="Senha" style="margin-bottom: 0px;"  value="<%= usuario.senha %>" name="senha" >
                 
-                <input type="submit" value="<%= buttonMessage %>" class="inputBtn">
+                <input type="submit" value="<%= buttonMessage %>" class="inputBb">
             </form>
         </div>
     </div>
