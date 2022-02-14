@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="../stylesheets/style.css">
     <title>Login</title>
 </head>
-
 <body>
         <input type="text" class="searchBox" placeholder="Pesquisar">
     
         <div class="nav">
+            <a href="/admin/estoque"></a>
             <div class="pageSelection">
                 <a href="#">
                     <i class="fas fa-bacon"></i>
@@ -36,7 +36,7 @@
     
             <div class="pageSelection">
                 <a href="#">
-                    <i class="fa fa-screwdriver-wrench"></i>
+                    <i class="fa fa-screwdriver"></i>
                     <span>Configuração</span>
                 </a>
             </div>
@@ -46,7 +46,7 @@
     <h1 class="subtitle">Usuários</h1>
       </div>
 
-<div class="table-responsive">
+
 <table class="contentTable">
     <thead>
     <tr>
@@ -71,6 +71,7 @@
             </tr>
         <% } %>
     <a class="addSupplies" href="/admin/usuarios/cadastrar">+</a>
+    <a class="nav-linck px-3" href="/logout" >Logout</a>
     </tbody>
 </table>
 </div>
