@@ -63,15 +63,15 @@
                 <td><%= usuarios[i].nome %></td>
                 <td><%= usuarios[i].email %></td>
                 <td>
-                    <a class="btn btn-outline" href="/admin/usuarios/editar/<%= usuarios[i].id %>">
-                        <i class="fa fa-pencil"></i></a>
-                    <a class="btn btn-outline" href="/admin/usuarios/excluir/<%= usuarios[i].id %>">
+                    <a class="editIcon" href="/admin/usuarios/editar/<%= usuarios[i].id %>">
+                        <i class="far fa-edit"></i></a>
+                    <a class="editIcon" href="/admin/usuarios/excluir/<%= usuarios[i].id %>">
                         <i class="fa fa-trash"></i></a>
                 </td>
             </tr>
         <% } %>
-    <a class="addSupplies" href="/admin/usuarios/cadastrar">+</a>
-    <a class="nav-linck px-3" href="/logout" >Logout</a>
+    <a class="addSupplies" href="/users/cadastro">+</a>
+    <a class="editIcon" href="/logout" >Logout</a>
     </tbody>
 </table>
 </div>
