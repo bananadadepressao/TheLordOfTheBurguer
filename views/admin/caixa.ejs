@@ -11,164 +11,221 @@
 <body class="bodyBox">
     <%- include("../partials/sidebar") %>
 
-    <div class="models">
-        <div class="models-item">
-            <a href="#">
-                <div class="models-item-img">
-                    <img src="" alt="">
-                </div>
-                <div class="models-item-add">+</div>
-            </a>
-            <div class="models-item-price">R$ --</div>
-            <div class="models-item-name">--</div>
-            <div class="models-item-desc">--</div>
+    <% if(lanches.length == 0) {%>
+        <div  class="notFound">
+            <img src="/images/nothingFound.png" alt="Nenhum item cadastrado no estoque">
+            <h3>Não há nenhum item cadastrado em seu estoque!</h3>
         </div>
-        <div class="cart-item">
-            <img src="" alt="">
-            <div class="cart-item-qtarea">
-                <button class="cart-item-qtmenos">-</button>
-                <div class="cart-item-qt">1</div>
-                <button class="cart-item-qtmais">+</button>
+    <% } else{ %> 
+        <div class="models">
+            <div class="models-item">
+                <a href="#">
+                    <div class="models-item-img">
+                        <img src="" alt="">
+                    </div>
+                    <div class="models-item-add">+</div>
+                </a>
+                <div class="models-item-price">R$ --</div>
+                <div class="models-item-name">--</div>
+                <div class="models-item-desc">--</div>
             </div>
-        </div>
-    </div>
-
-    <header>
-        <div class="menu-openner">
-            <span>0</span>
-            <span class="material-icons">shopping_cart</span>
-        </div>
-    </header>
-
-    <main>
-        <h1 class="titleCashier">Caixa - Pedidos</h1>
-        <div class="models-area"></div>
-    </main>
-
-    <aside>
-        <div class="cart-area">
-            <div class="menu-closer">
-                <span class="material-icons">close</span>
-            </div>
-            <h1>Seus modelos</h1>
-            <div class="cart"></div>
-            <div class="cart-details">
-                <div class="cart-total-item subtotal">
-                    <span>Subtotal</span>
-                    <span>R$ --</span>
-                </div>
-                <div class="cart-totalitem desconto">
-                    <span>Desconto (-10%)</span>
-                    <span>R$ --</span>
-                </div>
-                <div class="cart-finalizar">Finalizar Compra</div>
-            </div>
-        </div>
-    </aside>
-
-    <div class="modelsWindowArea">
-        <div class="modelWindowBody">
-            <div class="modelsInfo-cancelMobileButton">Voltar</div>
-            <div class="modelsBig">
+            <div class="cart-item">
                 <img src="" alt="">
-            </div>
-            <div class="modelsInfo">
-                <h1 class="h11">--</h1>
-                <div class="modelsInfo-desc">--</div>
-                <div class="modelsInfo-sizearea">
-                    <div class="modelsInfo-sector">Escala</div>
-                    <div class="modelsInfo-sizes">
-                        <div data-key="0" class="modelsInfo-size">1/72<span>--</span></div>
-                    </div>
-                    <div class="modelsInfo-sizes">
-                        <div data-key="1" class="modelsInfo-size">1/48<span>--</span></div>
-                    </div>
-                    <div class="modelsInfo-sizes">
-                        <div data-key="1" class="modelsInfo-size">1/32<span>--</span></div>
-                    </div>
+                <div class="cart-item-nome"></div>
+                <div class="cart-item-qtarea">
+                    <button class="cart-item-qtmenos">-</button>
+                    <div class="cart-item-qt">1</div>
+                    <button class="cart-item-qtmais">+</button>
                 </div>
+            </div>
+        </div>
+    
+        <header>
+            <div class="menu-openner">
+                <span>0</span>
+                <i class="fa fa-shopping-cart"></i>
+            </div>
+        </header>
+    
+        <main>
+            <h1 class="titleCashier">Caixa - Pedidos</h1>
+            <div class="models-area"></div>
+        </main>
+    
+        <aside>
+            <div class="cart-area">
+                <div class="menu-closer">
+                    <span class="material-icons">close</span>
+                </div>
+                <h1>Pedidos</h1>
+                <div class="cart"></div>
+                <div class="cart-details">
+                    <div class="cart-total-item subtotal">
+                        <span>Subtotal</span>
+                        <span>R$ --</span>
+                    </div>
+                    <div class="cart-totalitem desconto">
+                        <span>Desconto (-10%)</span>
+                        <span>R$ --</span>
+                    </div>
+                    <div class="cart-totalitem total big">
+                        <span>Total</span>
+                        <span>R$ --</span>
+                    </div>
 
-                <div class="modelsInfo-pricearea">
-                    <div class="modelsInfo-sector">Preço</div>
-                    <div class="modelsInfo-price">
-                        <div class="modelsInfo-actualPrice">R$ --</div>
-                        <div class="modelsInfo-qtarea">
-                            <button type="button" class="modelsInfo-qtmenos">-</button>
-                            <div class="modelsInfo-qt">1</div>
-                            <button type="button" class="modelsInfo-qtmais">+</button>
+                    <form action="/admin/caixa/pedido?_method=PUT" method="POST">    
+                        <input type="text" name="pedido" class="bufferCart" style="display: none;">
+
+                        <button type="submit" class="cart-finalizar">Finalizar Compra</button>
+                    </form>
+                    <!-- <div class="cart-finalizar">Finalizar Compra</div>-->
+                </div>
+            </div>
+        </aside>
+    
+        <div class="modelsWindowArea">
+            <div class="modelsWindowBody">
+                <div class="modelsInfo-cancelMobileButton">Voltar</div>
+                <div class="modelsBig">
+                    <div><img src="" alt=""></div>
+                </div>
+                <div class="modelsInfo">
+                    <h1 class="h11">--</h1>
+                    <div class="modelsInfo-desc">--</div>
+    
+                    <div class="modelsInfo-pricearea">
+                        <div class="modelsInfo-sector">Preço</div>
+                        <div class="modelsInfo-price">
+                            <div class="modelsInfo-actualPrice">R$ --</div>
+                            <div class="modelsInfo-qtarea">
+                                <button type="button" class="modelsInfo-qtmenos">-</button>
+                                <div class="modelsInfo-qt">1</div>
+                                <button type="button" class="modelsInfo-qtmais">+</button>
+                            </div>
                         </div>
                     </div>
+                    <div class="modelsInfo-addButton">Adicionar ao Carrinho</div>
+                    <div class="modelsInfo-cancelButton">Cancelar</div>
                 </div>
-                <div class="modelsInfo-addButton">Adicionar ao Carrinho</div>
-                <div class="modelsInfo-cancelButton">Cancelar</div>
             </div>
         </div>
-    </div>
-    
-    <script type="text/javascript" src="/js/models.js"></script>
-    <script type="text/javascript" >
-        const c = (el) => document.querySelector(el);
-        const cs = (el) => document.querySelector(el);
         
-        modelsJson.map((item, index) => {
-            let modelsItem = c('.models .models-item').cloneNode(true);
-            /*modelsItem.querySelector('.models-item-img img').src = item.img;
-            modelsItem.querySelector('.models-item-price').innerHTML = `R$ ${item.price[0].toFixed(2)}`;
-            modelsItem.querySelector('.models-item-name').innerHTML = item.name;
-            modelsItem.querySelector('.models-item-desc').innerHTML = item.description;*/
-            c('.models-area').append(modelsItem);
-        });
-    </script>
+        <!--<script type="text/javascript" src="/js/models.js"></script>-->
+        <script type="text/javascript" >
+            const c = (el) => document.querySelector(el);
+            const cs = (el) => document.querySelectorAll(el);
+            let cart = [];
+            let modalQt = 0;
+            let key = 0;
     
-   <!--  <section class="contentFilter">
-         <div>
-            <button class="filterBtn">Lanches</button>
-            <button class="filterBtn">Acompanhamentos</button>
-            <button class="filterBtn">Bebidas</button>
-            <button class="filterBtn">Combos</button>
-            <button class="filterBtn">Sobremesas</button>
-            <button class="filterBtn">Snacks</button>
-         </div>
+            var test = '<%- JSON.stringify(lanches) %>';
+            var modelsJson = JSON.parse(test);
+    
+            modelsJson.map((item, index) => {
+                let modelsItem = c('.models .models-item').cloneNode(true);
+                modelsItem.setAttribute('data-key', index);
+                modelsItem.querySelector('.models-item-img img').src = "/images/BBB.png";
+                modelsItem.querySelector('.models-item-price').innerHTML = `R$ ${item.preco.toFixed(2)}`;
+                modelsItem.querySelector('.models-item-name').innerHTML = item.nome;
+                modelsItem.querySelector('.models-item-desc').innerHTML = item.descricao;
+    
+                modelsItem.querySelector('a').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    key = e.target.closest('.models-item').getAttribute('data-key');
+                    modalQt = 1;
+                    c('.modelsBig div img').src = "/images/BBB.png";
+                    c('.modelsInfo h1').innerHTML = modelsJson[key].nome;
+                    c('.modelsInfo-desc').innerHTML = modelsJson[key].descricao;
+                    c('.modelsInfo-actualPrice').innerHTML = `R$ ${modelsJson[key].preco.toFixed(2)}`;
+                    c('.modelsInfo-qt').innerHTML = modalQt;
+                    c('.modelsWindowArea').style.opacity = 0;
+                    c('.modelsWindowArea').style.display = 'flex';
+                    setTimeout(()=>{
+                        c('.modelsWindowArea').style.opacity = 1;
+                    }, 200);
+                });
+                c('.models-area').append(modelsItem);
+            });
+    
+            function closeModal(){
+                c('.modelsWindowArea').style.opacity = 0;
+                setTimeout(()=>{
+                    c('.modelsWindowArea').style.display = 'none';
+                }, 200);
+            }
+    
+            cs('.modelsInfo-cancelButton, .modelsInfo-cancelMobileButton').forEach((e) => {
+                e.addEventListener('click', closeModal);
+            });
+    
+            c('.modelsInfo-qtmenos').addEventListener('click', ()=>{
+                if(modalQt > 1){
+                    modalQt--;
+                    c('.modelsInfo-qt').innerHTML = modalQt;
+                }
+            });
+            c('.modelsInfo-qtmais').addEventListener('click', ()=>{
+                modalQt++;
+                c('.modelsInfo-qt').innerHTML = modalQt;
+            });
+            c('.modelsInfo-addButton').addEventListener('click', ()=>{
+                let localId = cart.findIndex((item) => item.id == modelsJson[key].id);
+                if(localId > - 1){
+                    cart[localId].qt += modalQt;
+                } else{
+                    cart.push({
+                        id: modelsJson[key].id,
+                        qt: modalQt,
+                        ing: modelsJson[key].itens.ing
+                    });
+                }
+                updateCart();
+                closeModal();
+            });
+    
+            function updateCart(){
+                c('.menu-openner span').innerHTML = cart.length;
+                if(cart.length > 0){
+                    c('aside').classList.add('show');
+                    c('.cart').innerHTML = '';
+                    let subtotal = 0;
+                    let desconto = 0;
+                    let total = 0;
+    
+                    cart.map((itemCart, index)=>{
+                        let modelItem = modelsJson.find((itemBD)=> itemBD.id == itemCart.id);
+                        subtotal += modelItem.preco * itemCart.qt;
+                        let cartItem = c('.models .cart-item').cloneNode(true);
+                        cartItem.querySelector('img').src = "/images/BBB.png";
+                        cartItem.querySelector('.cart-item-nome').innerHTML = modelItem.nome;
+                        cartItem.querySelector('.cart-item-qt').innerHTML = itemCart.qt;
+                        cartItem.querySelector('.cart-item-qtmenos').addEventListener('click', ()=>{
+                            if(itemCart.qt > 1){
+                                itemCart.qt--;
+                            } else{
+                                cart.splice(index, 1);
+                            }
+                            updateCart();
+                        });
+                        cartItem.querySelector('.cart-item-qtmais').addEventListener('click', ()=>{
+                            itemCart.qt++;
+                            updateCart();
+                        });
+                        c('.cart').append(cartItem);
+                    });
+                    desconto = subtotal * 0.1;
+                    total = subtotal - desconto;
+                    c('.subtotal span:last-child').innerHTML = `R$ ${subtotal.toFixed(2)}`;
+                    c('.desconto span:last-child').innerHTML = `R$ ${desconto.toFixed(2)}`;
+                    c('.total span:last-child').innerHTML = `R$ ${total.toFixed(2)}`;
+                } else{
+                    c('aside').classList.remove('show');
+                }
 
-         <input type="text" class="filterByText" placeholder="Pesquisar">
-    </section>
-
-    <section class="contentMenu">
-        <% lanches.forEach((lanche) => { %>
-            <div class="menuItem">
-                <div class="contentImgLanch">
-                    <img src="/images/BBB.png" alt="Lanche BBB" class="imgLanch">
-                </div>
-                <div class="nameAndDescription">
-                    <div><%= lanche.nome %></div>
-                    <div>R$ <%= lanche.preco %></div>
-                    <div style="font-size: 14px; font-weight: 400;"><%= lanche.description %></div>
-                </div>
-                <div>
-                    <button type="button" class="addLanch"><span>+</span></button>
-                    <button type="button" class="removeLanch"><span>-</span></button>
-                </div>
-            </div>
-        <% }) %>
-    </section>
-
-    <section class="selectedItens"></section>
-
-    <button class="addSupplies"><i class="fas fa-thumbs-up"></i></button>
-
-    <script type="text/javascript">
-        let addBtn = document.querySelector(".addLanch");
-        let rmvBtn = document.querySelector(".removeLanch");
-        let feedSelection = document.querySelector(".selectedItens");
-
-        addBtn.addEventListener('click', function(){
-            console.log('AddBtn Clicked');
-        });
-
-        rmvBtn.addEventListener('click', function(){
-            console.log('RmvBtn Clicked');
-        });
-
-    </script> -->
+                let atualizaCarrinhoController = c('.bufferCart');
+                atualizaCarrinhoController.value = JSON.stringify(cart);
+            };
+        </script>
+    <% } %>
 </body>
 </html>

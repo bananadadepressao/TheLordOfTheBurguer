@@ -1,4 +1,47 @@
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"></div>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/730d5389e8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <title>Login</title>
+</head>
+<body>
+        <%- include("../../partials/sidebar") %>
+
+    <h1 class="subtitle">Usuários</h1>
+
+<table class="contentTable">
+    <thead>
+    <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">E-mail</th>
+    </tr>
+    </thead>
+    <tbody>      
+            <% for(let i = 0; i < usuarios.length; i++){ %>
+            <tr>
+                <td><%= usuarios[i].nome %></td>
+                <td><%= usuarios[i].email %></td>
+                <td>
+                    <a class="editIcon" href="/admin/usuarios/editar/<%= usuarios[i].id %>">
+                        <i class="far fa-edit"></i></a>
+                    <a class="editIcon" href="/admin/usuarios/excluir/<%= usuarios[i].id %>">
+                        <i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>
+
+    <a class="addSupplies" href="/admin/usuarios/cadastrar">+</a>
+</body>
+</html>
+
+
+<!--<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"></div>
     <h1 class="h2">Usuários</h1>
 </div>
 
@@ -26,4 +69,4 @@
     <a class="btn btn-primary" href="/admin/usuarios/cadastrar">Cadastrar</a>
     </tbody>
 </table>
-</div>
+</div> -->

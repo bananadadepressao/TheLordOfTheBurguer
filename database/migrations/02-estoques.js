@@ -13,11 +13,11 @@ module.exports = {
             allowNull: false 
         },
         quantidade: { 
-            type: Sequelize.DataTypes.STRING(45), 
+            type: Sequelize.DataTypes.INTEGER.UNSIGNED,
             allowNull: false 
         },
         quantidade_minima: { 
-            type: Sequelize.DataTypes.STRING(45), 
+            type: Sequelize.DataTypes.INTEGER.UNSIGNED,
             allowNull: false 
         },
         ultima_atualizacao: {

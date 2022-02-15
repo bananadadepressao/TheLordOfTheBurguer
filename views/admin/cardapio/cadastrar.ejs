@@ -15,22 +15,30 @@
     <%if(lanche.nome == undefined){%>
         <h1 class="titleRegister">Cadastro de Item no Cardápio</h1>
 
-        <form action="" class="formContentRegister">
-            <label for="lanche" class="standartLabel">Nome do Lanche / Bebida</label>
-            <input type="text" name="lanche" placeholder="Nome do Lanche / Bebida" class="standartInput">
-
-            <label for="ingrediente" class="standartLabel">Adicionar Ingredientes / Bebidas</label>
-            <div id="selectIngredient"></div>
-            <select class="standartSelectFood" name="ingrediente">
+        <div class="bufferSelect" style="display: none;">
+            <select class="standartSelectFood">
                 <option selected disabled hidden style="color: hsl(0, 0%, 77%);">Ingrediente / Bebida</option>
                 <%ingredientes.forEach((i) => {%>
                     <option value="<%= i.id %>"><%= i.nome %></option>
                 <%})%>
             </select>
+        </div>
+
+        <form action="/admin/cardapio/cadastrar" class="formContentRegister" method="POST">
+            <label for="lanche" class="standartLabel">Nome do Lanche / Bebida</label>
+            <input type="text" name="lanche" placeholder="Nome do Lanche / Bebida" class="standartInput">
+
+            <label for="ingrediente" class="standartLabel">Adicionar Ingredientes / Bebidas</label>
+            <div id="selectIngredient"></div>
             <button type="button" class="addIngrediente">+</button>
 
             <label for="description" class="standardLabelFoodDescription">Descrição</label>
             <textarea name="description" cols="60" rows="10"></textarea>
+
+            <label for="preco" class="standartLabel">Preço</label>
+            <input type="number" step="0.01" name="preco" placeholder="Preço" class="standartInput">
+
+            <input type="number" name="qtdIngredientes" class="qtdForm" style="display: none;" value="1">
     
             <input type="submit" value="Cadastrar" class="submitBtn">
         </form>
@@ -56,29 +64,18 @@
     <script type="text/javascript">
         let addBtn = document.querySelector(".addIngrediente");
         let showIngredient = document.querySelector("#selectIngredient");
-        let qtdItens = "<%= ingredientes.length %>";
-        let itensData = [];
-
-        for(let i = 0; i < "<%= ingredientes.length %>"; i++){
-            console.log("<%= ingredientes%>" + [i] + ".id%>");
-
-            
-        }
+        let firstSelect = document.querySelector(".bufferSelect .standartSelectFood").cloneNode(true);
+        let qtdItens = 0;
+        firstSelect.name = `ingrediente${qtdItens}`;
+        showIngredient.append(firstSelect);
 
         addBtn.addEventListener('click', function(){
-            let ingredient = document.createElement("select");
+            let newSelect = document.querySelector(".bufferSelect .standartSelectFood").cloneNode(true);
+            qtdItens++;
+            document.querySelector(".qtdForm").value = qtdItens + 1;
 
-            console.log(itensData);
-
-            ingredient.style.width = "50%";
-            ingredient.style.height = "36px";
-            ingredient.style.fontSize = "18px";
-            ingredient.style.boxSizing = "border-box";
-            ingredient.style.display = "block";
-            ingredient.style.marginBottom = "8px";
-            ingredient.style.paddingLeft = "12px";
-
-            showIngredient.append(ingredient);
+            newSelect.name = `ingrediente${qtdItens}`;
+            showIngredient.append(newSelect);
         });
     </script>
 </body>

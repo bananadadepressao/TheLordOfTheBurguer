@@ -9,6 +9,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: #eee;
 }
 
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Login Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
@@ -192,12 +193,28 @@ body{
     width: 60%;
     top: 220px;
 }
+.iconThrash{
+    color: #000;
+    cursor: pointer;
+}
+.iconThrash:hover{
+    color: #D68910;
+}
 .snackCard{
     width: 240px;
     height: 240px;
     box-shadow: 3px 3px rgba(0, 0, 0, 0.25);
-    background: rgba(196, 196, 196, 0.01);
+    background: #FFF;
     margin: 24px auto;
+}
+.snackCard div{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.snackCard form button{
+    background-color: #FFF;
+    border: none;
 }
 .coverCard{
     width: 240px;
@@ -207,8 +224,16 @@ body{
     font-size: 16px;
     font-weight: bold;
     color: #000;
+    margin: 8px;
+}
+.snackPrice{
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
     margin-left: 8px;
     margin-right: 8px;
+    margin-bottom: 0px;
+    margin-top: 0;
 }
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END Food Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
@@ -360,7 +385,8 @@ body{
     color: #D68910;
     border: solid 3px #D68910;
     bottom: 0px;
-    left: 0%;
+    top: 100%;
+    right: 89%;
     box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
 }
 .excludeBtn:hover{
@@ -373,6 +399,7 @@ body{
     top: 180px;
     width: 60%;
     left: 0px;
+    padding-bottom: 24px;
 }
 .formContentExclude{
     position: relative;
@@ -444,7 +471,6 @@ body{
     font-size: 18px;
     background: #D68910;
     color: white;
-    right: 0%;
     border: none;
     right: 50%;
     box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
@@ -637,7 +663,6 @@ body{
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> New Order Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 .bodyBox{
     box-sizing: border-box;
-    background-color: #eee;
     font-size: 15px;
     display: flex;
     margin: 0px;
@@ -652,7 +677,7 @@ header{
     right: 0px;
     top: 0px;
     height: 60px;
-    background-color: #399ADE;
+    background-color: #D68910;
     display: none;
     justify-content: flex-end;
     align-items: center;
@@ -660,9 +685,10 @@ header{
 .menu-openner{
     margin-right: 15px;
     font-size: 26px;
-    background-color: #A9DCFF;
+    background-color: #d69d40;
     padding: 5px 20px;
     border-radius: 5px;
+    color: #FFF;
 }
 .menu-openner span{
     margin-right: 10px;
@@ -674,7 +700,7 @@ header{
     font-size: 30px;
 }
 aside{
-    background-color: #9CCBE6;
+    background-color: #FFF;
     width: 0vw;
     transition: all ease .2s;
     overflow-x: hidden;
@@ -692,7 +718,7 @@ main{
 .models-area{
     margin-top: 10%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
 .models-item{
     text-align: center;
@@ -708,29 +734,31 @@ main{
 .models-item-img{
     width: 200px;
     height: 200px;
+    overflow: hidden;
     background-color: #EEE;
     border-radius: 25px;
-    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 10px 50px rgba(0, 0, 0, 0.2);
 }
 .models-item-img img{
-    width: 100%;
-    height: auto;
+    height: 200px;
+    border-radius: 25px;
 }
 .models-item-add{
     width: 50px;
     height: 50px;
     line-height: 50px;
     border-radius: 25px;
-    background-color: #388BC5;
+    background-color: #D68910;
     text-align: center;
     color: #FFF;
     font-size: 22px;
     cursor: pointer;
     margin-top: -25px;
     transition: all ease 0.2s;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 .models-item a:hover .models-item-add{
-    background-color: #244C88;
+    background-color: #855508;
 }
 .models-item-price{
     font-size: 15px;
@@ -756,7 +784,7 @@ main{
     right: 0px;
     background-color: rgba(255, 255, 255, 0.5);
     display: none;
-    transition: all ease 0.2s;
+    transition: all ease 0.35s;
     justify-content: center;
     align-items: center;
     overflow: auto;
@@ -775,13 +803,19 @@ main{
     justify-content: center;
     align-items: center;
 }
+.modelsBig div{
+    width: 400px;
+    height: 325px;
+    overflow: hidden;
+    border-radius: 10px;
+}
 .modelsBig-back{
     position: absolute;
     width: 30px;
     height: 30px;
     background-color: #000;
 }
-.modelsBig img{
+.modelsBig div img{
     height: 400px;
     width: auto;
 }
@@ -796,6 +830,7 @@ main{
     font-size: 15px;
     color: #999;
     margin-top: 10px;
+    margin-right: 10px;
 }
 .modelsInfo-sector{
     color: #CCC;
@@ -810,6 +845,7 @@ main{
     overflow: hidden;
 }
 .modelsInfo-size{
+    width: 250px;
     padding: 10px 15px;
     color: #000;
     background-color: #EEE;
@@ -866,14 +902,14 @@ main{
     margin-top: 30px;
     padding: 20px 30px;
     border-radius: 20px;
-    background-color: #48D05F;
+    background-color: #D68910;
     color: #FFF;
     display: inline-block;
     cursor: pointer;
     margin-right: 30px;
 }
-.modelsInfo--addButton:hover{
-    background-color: #32A345;
+.modelsInfo-addButton:hover{
+    background-color: #855508;
 }
 .modelsInfo-cancelButton{
     display: inline-block;
@@ -943,16 +979,18 @@ main{
 .cart-finalizar{
     padding: 20px 30px;
     border-radius: 20px;
-    background-color: #48D05F;
+    background-color: #D68910;
     color: #FFF;
     cursor: pointer;
     text-align: center;
     margin-top: 20px;
-    border: 2px solid #63FF7C;
+    border: 2px solid #D68910;
     transition: all ease 0.2s;
 }
 .cart-finalizar:hover{
-    background-color: #35AF4A;
+    background-color: #855508;
+    border: 2px solid #855508;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 }
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> End New Order Screen <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
@@ -1008,8 +1046,9 @@ main{
         box-shadow: none;
         margin: 0px;
     }
-    .modelsBig img{
+    .modelsBig div img{
         width: 75%;
+        overflow: hidden;
         height: auto;
     }
     .modelsInfo h1{

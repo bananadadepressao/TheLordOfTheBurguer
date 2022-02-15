@@ -13,6 +13,14 @@ module.exports = {
           type: Sequelize.DataTypes.STRING(75), 
           allowNull: false 
         },
+        preco: {
+          type: Sequelize.DataTypes.DOUBLE.UNSIGNED,
+          allowNull: false
+        },
+        itens: {
+          type: Sequelize.DataTypes.JSON,
+          allowNull: false
+        },
         descricao: {
           type: Sequelize.DataTypes.TEXT, 
           allowNull: false 

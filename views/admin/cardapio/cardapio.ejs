@@ -12,40 +12,42 @@
 
     <%- include("../../partials/sidebar") %>
 
-    <form action="/admin/estoque" method="GET">
+    <form action="/admin/cardapio" method="GET">
         <input type="text" class="searchBox" name="search" placeholder="Pesquisar">
         <button type="submit" class="searchBtn"><i class="fa fa-search"></i></i></button>
     </form>
 
-    <h2 class="subtitle">Todos os Lanches</h2>
-    <p class="subsubtitle">6 itens</p>
+    <% if(lanches.length == 0) {%>
+        <div  class="notFound">
+            <img src="/images/nothingFound.png" alt="Nenhum lanche foi adicionado">
+            <h3>Não há nenhum lanche cadastrado em seu cardápio</h3>
+        </div>
+    <%} else{%>
+        <h2 class="subtitle">Todos os Lanches</h2>
 
-    <div class="foodContent">
-        <div class="snackCard">
-            <img src="/images/BBB.png" alt="Lanche BBB" class="coverCard">
-            <h3 class="snackTitle">BBB (Bacon and Barcue - Bitch!)</h3>
+        <% if(lanches.length > 1) {%>
+            <p class="subsubtitle"><%= lanches.length %> lanches</p>
+        <%} else{%>
+            <p class="subsubtitle"><%= lanches.length %> lanche</p>
+        <%}%>
+    
+        <div class="foodContent">
+            <% lanches.map((lanche) => { %>
+                <div class="snackCard">
+                    <img src="/images/BBB.png" alt="Lanche BBB" class="coverCard">
+                    <h3 class="snackTitle"><%= lanche.nome %></h3>
+                    <h4 class="snackPrice">R$ <%= lanche.preco.toFixed(2) %></h4>
+                    <div>
+                        <form action="/admin/cardapio/excluir/<%= lanche.id %>?_method=DELETE" method="POST">
+                            <button type="submit">
+                                <div class="iconThrash"><i class="fas fa-trash"></i></div>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            <% }) %>
         </div>
-        <div class="snackCard">
-            <img src="/images/BBB.png" alt="Lanche BBB" class="coverCard">
-            <h3 class="snackTitle">BBB (Bacon and Barcue - Bitch!)</h3>
-        </div>
-        <div class="snackCard">
-            <img src="/images/BBB.png" alt="Lanche BBB" class="coverCard">
-            <h3 class="snackTitle">BBB (Bacon and Barcue - Bitch!)</h3>
-        </div>
-        <div class="snackCard">
-            <img src="/images/BBB.png" alt="Lanche BBB" class="coverCard">
-            <h3 class="snackTitle">BBB (Bacon and Barcue - Bitch!)</h3>
-        </div>
-        <div class="snackCard">
-            <img src="/images/BBB.png" alt="Lanche BBB" class="coverCard">
-            <h3 class="snackTitle">BBB (Bacon and Barcue - Bitch!)</h3>
-        </div>
-        <div class="snackCard">
-            <img src="/images/BBB.png" alt="Lanche BBB" class="coverCard">
-            <h3 class="snackTitle">BBB (Bacon and Barcue - Bitch!)</h3>
-        </div>
-    </div>
+    <% } %>
 
     <a href="/admin/cardapio/cadastrar" class="addSupplies" >+</a>
 </body>
